@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrap{}
+    .wrap div{width: 20px; height: 2px; background: #000; }
+    .wrap div:before{display: block; content:''; width: 20px; height: 2px; margin: 10px 0; background: blue; margi n: -10px;}
+    .wrap div:after{display: block; content:''; width: 20px; height: 2px; margin: 10px 0; background: red; margi n: -10px;}
+</style>
+<body>
+    <div class="wrap">
+        <div>dd</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.wrap{width: 900px;}
+.wrap .inner{padding: 30px;}
+.wrap .inner .right_con{width: 60%;}
+.wrap .inner .right_con form{}
+.wrap .inner .right_con form fieldset{}
+.wrap .inner .right_con form fieldset legend{display: none;}
+.wrap .inner .right_con form fieldset .sign_up_wrap{width: 100%; display: flex; flex-wrap: wrap;}
+.wrap .inner .right_con form fieldset .sign_up_wrap dt{width: 20%;}
+.wrap .inner .right_con form fieldset .sign_up_wrap dd{width: 80%;}
+.wrap .inner .right_con form fieldset .sign_up_wrap dd +label{padding: 10px;}
+.n{display: inline-block; width: 100%; padding: 10px; background: #dccdcdcc;}
+in put[type="text"]{display: none;}

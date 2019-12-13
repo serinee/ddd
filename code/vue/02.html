@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <span>메시지: {{msg}}</span>
+    <span v-once>다시는 변경하지 않습니다: {{msg}}</span>
+
+    <p>Using mustaches: {{ rawHtml}}</p>
+    <p>Using V-html directive: <span v-html="rawHtml"></span></p>
+    
+    <div v-bind:id="dynamicID"></div>
+
+    <button v-bind:disabled="isButtonDisabled">Button</button>
+
+    {{ number + 1 }}
+    {{ ok ? 'YES' : 'NO'}}
+    {{ message.split('').reverse().join('')}}
+    <div v-bind:id="'list-' + id"></div>
+
+    <!-- 아래는 구문입니다, 표현식이 아닙니다. -->
+    {{ var a = 1}}
+
+    <!-- 조건문은 작동하지 않는다. 삼항 연산자를 사용해야 한다. -->
+    {{ if (ok) { return message}}}
+
+    <p v-if="seen">이제 나를 볼 수 있어요</p>
+    <a v-bind:href="url">...</a>
+    <a v-on:click="doSomething">...</a>
+
+    <!-- 동적 전달인자는 "동적 전달인자의 형식 제약"의 부분에서 후술되는 바와 같이, 조금의 제약이 있는 점에 주의하라 -->
+    <a v-bind:[attributeName]="url">...</a>
+
+    <a v-on:[eventName]="doSomething">...</a>
+
+    <!-- 컴파일러 경고를 불러옵니다 -->
+    <a v-bint:['foo' + bar]="value">...</a>
+
+    <!--
+in-DOM 탬플릿에서는 이 부분이 v-bind:[someattr]로 변환됩니다.
+인스턴스에 "someattr"속성이 없는 경우, 이 코드는 동작하지 않습니다.
+-->
+    <a v-bind:[someAttr]="value">...</a>
+
+    <form v-on:submit.prevent="onSubmit">...</form>
+    
+    <script>
+        
+    </script>
+</body>
+</html>

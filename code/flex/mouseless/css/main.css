@@ -1,0 +1,98 @@
+.inner{width: 1156px; margin: 0 auto; padding: 0 100px;}
+
+#header{width: 100%; height: 110px; background: #fdd231;}
+#header .inner{display: flex; justify-content: space-between; align-items: center; padding-top: 20px; padding-bottom: 20px; }
+#header .inner .logo{}
+#header .inner .logo h1 a{display: flex; align-items: center;}
+#header .inner .logo h1 a img:first-child{width: 50px; height: 50px; margin-right: 10px;}
+#nav{}
+#nav ul{display: flex;}
+#nav ul li{margin-left: 20px; font-weight: bold;}
+
+#contents{width: 100%; height: 100%;}
+.section01{background: #fdd231; height: 100%;}
+.section01 .inner{padding-top: 100px; padding-bottom: 100px;}
+.section01 .inner .caption-wrap{width: 80%; margin: 0 auto; text-align: center;}
+.section01 .inner .caption-wrap h2{margin-bottom: 20px; font-size: 65px; font-weight: bold; }
+.section01 .inner .caption-wrap p{margin-bottom: 70px; font-size: 24px; color: #000; opacity:0.5;}
+.section01 .inner .caption-wrap .btn-buy{margin-bottom: 20px;}
+.section01 .inner .caption-wrap .btn-buy a{padding: 9px 40px; background: #fff; font-size: 20px; font-weight: bold; color: #000000; border-radius: 10px;}
+.section01 .inner .caption-wrap span{color:#000; opacity: 0.5;}
+
+.section02{ /*background:  url('../images/bg.svg') #000 0 0 no-repeat cover;*/
+background-image: url('../images/bg.svg');
+background-color: #000;
+background-size: 100%;
+background-repeat: no-repeat;
+background-position: 0 0; 
+}  
+
+.section02 .inner{padding-bottom: 120px;}
+.section02 .inner .video-wrap{width: 100%; text-align: center; }
+.section02 .inner .video-wrap video{}
+
+.section03{background: #000;}
+.section03 .inner{padding-bottom: 50px;}
+.section03 .inner .con03_boxwrap{display: flex; justify-content: space-between; align-items: center; margin-bottom: 100px;  }
+.section03 .inner .con03_boxwrap .imgwrap{overflow: hidden; width: 35%; border-radius: 20px;}
+.section03 .inner .con03_boxwrap .imgwrap img{max-width: 100%;}
+.section03 .inner .con03_boxwrap .caption{width: 55%; padding: 30px; }
+.section03 .inner .con03_boxwrap .caption h3{margin-bottom: 20px; font-size: 36px; font-weight: bold; color: #fff; }
+.section03 .inner .con03_boxwrap .caption p{font-size: 20px; color: #fff; opacity: 0.5;}
+.section03 .inner .con03_boxwrap:last-child{flex-direction: row-reverse;}
+
+.section04{background: #000;}
+.section04 .inner{padding-top: 40px; padding-bottom: 40px;}
+.section04 .inner div{width: 100%; padding: 120px 0; background: url('../images/blob.svg') 100% 0 no-repeat;}
+.section04 .inner div p{width: 67%; margin: 0 auto; font-size: 44px; font-weight: bold; color: #fff;}
+.section04 .inner div p strong{color: #fdd231}
+
+.section05{background: #000;}
+.section05 .inner{padding-top: 50px; padding-bottom: 50px;}
+.section05 .inner .con05_boxwrap{display: flex; justify-content: space-between; align-items: center; margin-bottom: 100px;  }
+.section05 .inner .con05_boxwrap .imgwrap{overflow: hidden; width: 35%; border-radius: 20px;}
+.section05 .inner .con05_boxwrap .imgwrap img{max-width: 100%;}
+.section05 .inner .con05_boxwrap .caption{width: 55%; }
+.section05 .inner .con05_boxwrap .caption h3{margin-bottom: 20px; font-size: 36px; font-weight: bold; color: #fff;}
+.section05 .inner .con05_boxwrap .caption p{font-size: 20px; color: #fff; opacity: 0.5;}
+.section05 .inner .con05_boxwrap:nth-of-type(2){flex-direction: row-reverse;}
+.section05 .inner .con05_boxwrap .conwrap{margin-right: 45px;}
+.section05 .inner .con05_boxwrap .conwrap div{display: flex; align-items: center;}
+.section05 .inner .con05_boxwrap .conwrap div span{display: inline-block; margin-right: 10px; width: 40px; height: 40px; background: #332a0a; border-radius: 50%; line-height: 40px; text-align: center;  }
+.section05 .inner .con05_boxwrap .conwrap div span i{font-size: 20px; color: #fdd231;  }
+.section05 .inner .con05_boxwrap .conwrap div h4{font-size: 24px; font-weight: bold; color: #fff;}
+.section05 .inner .con05_boxwrap .conwrap p{margin: 15px 0; color: #fff; opacity:0.7; line-height: 1.7;}
+
+.section06{background: #000;}
+.section06 .inner{}
+.section06 .inner .caption{width: 100%; padding: 80px 60px; border-radius: 20px; background-color: #fdd231; background-image: url('../images/shadow-logo.png'); background-repeat: no-repeat; background-position: 90% 70%; background-size: 280px; }
+.section06 .inner .caption h3{margin-bottom: 20px; font-size: 36px; font-weight: bold;}
+.section06 .inner .caption p{margin-bottom: 70px; font-size: 20px;}
+.section06 .inner .caption div{margin-bottom: 20px;}
+.section06 .inner .caption div a{padding: 9px 40px; background: #fff; font-size: 20px; font-weight: bold; color: #000000; border-radius: 10px;}
+.section06 .inner .caption span{font-size: 14px; }
+
+.section07{background: #000;}
+.section07 .inner{padding-top: 100px; padding-bottom: 100px;}
+.section07 .inner h2{font-size: 45px; color: #fff; font-weight: bold;}
+.section07 .inner .faq-wrap{display: flex; justify-content: space-between;}
+.section07 .inner .faq-wrap ul{ width: 47%;}
+.section07 .inner .faq-wrap ul li{margin: 30px 0;}
+.section07 .inner .faq-wrap ul li button{display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0; background: none; border: none;  }
+.section07 .inner .faq-wrap ul li button h4{font-size: 22px; font-weight: bold; color: #fff; text-align: left; }
+.section07 .inner .faq-wrap ul li button span{display: block;}
+.section07 .inner .faq-wrap ul li button span i{color: #fff; opacity: 0.5;}
+
+#footer{background: #000;}
+#footer .inner{padding-bottom: 130px;}
+#footer .inner .ft-wrap{display: flex; padding-top: 50px; border-top: 1px solid #fff; opacity: 0.7}
+#footer .inner .ft_section{width: 50%;}
+#footer .inner .ft_section ul{}
+#footer .inner .ft_section ul li{padding: 7px 0;}
+#footer .inner .ft_section ul li a{font-size: 18px; font-weight: bold; color: #fff; opacity: 0.7}
+#footer .inner .ft_section p{margin: 20px 0; font-weight: bold; color: #fff; opacity:0.7}
+#footer .inner .ft_section h4{font-size: 24px; color: #fff; font-weight: bold; }
+#footer .inner .ft_section form{}
+#footer .inner .ft_section form div{display: flex; align-items: center; justify-content: space-between; padding: 8px 10px; background:hsla(0,0%,94.9%,.1);  border-radius: 7px;}
+#footer .inner .ft_section form div input{font-size: 18px; font-weight: bold; color: #fff; border:none; background: none;}
+#footer .inner .ft_section form div button{font-size: 14px; font-weight: bold; padding: 5px 10px; background: #fdd231; border-radius: 7px; border: none;}

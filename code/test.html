@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    ul{list-style: none; margin: 0; padding: 0; }
+    a{text-decoration: none; color: #333;}
+
+    .wrap{width: 100%; border-bottom: 2px solid #000; }
+    #header{ width: 1200px; margin:auto; }
+
+    .top{ display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    /* flex-direction: row;  */
+    /* flex-wrap: wrap; */
+    }
+
+/*     
+
+    .top{position: relative; width: 1200px; margin:auto; }
+    .top h1{text-align: center; font-size: 30px}
+    .util-menu{position: absolute; top:0;}
+    .util-menu ul{display: flex;}
+    .util-menu ul li{margin:5px; font-weight: bold; font-size: 14px;}
+    .left{left:0;}
+    .right{right: 0; }*/
+    #nav{} 
+    #nav ul{display: flex; justify-content: center; }
+    #nav ul li{margin: 0 10px; }
+    #nav ul li a{font-weight: bold; text-transform: uppercase;}
+</style>
+<body>
+    <div class="wrap">
+        <header id="header">
+            <div class="top">
+                    <div class="util-menu left">
+                            <ul>
+                                <li>English (USD$)</li>
+                                <li>Search</li>
+                            </ul>
+                        </div>
+                <h1>Wishtrend.</h1>
+                <div class="util-menu right">
+                        <ul>
+                            <li>Hi, wish</li>
+                            <li>하트</li>
+                            <li>장바구니</li>
+                        </ul>
+                    </div>
+            </div>
+            
+            <nav id="nav">
+                <ul>
+                    <li><a href="#">best sellers</a></li>
+                    <li><a href="#">shop</a></li>
+                    <li><a href="#">routines</a></li>
+                    <li><a href="#">brand</a></li>
+                    <li><a href="#">sale</a></li>
+                    <li><a href="#">editorial</a></li>
+                    <li><a href="#">wishtrend tv</a></li>
+                </ul>
+            </nav>
+          
+        </header>
+    </div>
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrap">
+        <table>
+            <tr>
+                <th>squadname</th>
+                <td class="squadname"></td>
+            </tr>
+            <tr>
+                <th>hometown</th>
+                <td class="hometown"></td>
+            </tr>
+            <tr>
+                <th>formed</th>
+                <td class="formed"></td>
+            </tr>
+
+            <tr>
+                <th>secretbase</th>
+                <td class="secretbase"></td>
+            </tr>
+            <t>
+                <th>active</th>
+                <td class="active"></td>
+            </tr>
+            <tr>
+                <th>members</th>
+                <td class="members">
+                    <ul>
+                        <li class="members_01">
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td class="01_name"></td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td class="01_age"></td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td class="01_secretIdentity"></td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td class="01_powers">
+                                        <ol>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="members_02">
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td class="02_name"></td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td class="02_age"></td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td class="02_secretIdentity"></td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td class="02_powers">
+                                        <ol>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li class="members_03">
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td class="03_name"></td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td class="03_age"></td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td class="03_secretIdentity"></td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td class="03_powers">
+                                        <ol>
+                                            <li></li>
+                                            <li></li>
+                                            <li></li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+        //https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+        // var json = {
+        //     "squadName": "Super hero squad",
+        //     "homeTown": "Metro City",
+        //     "formed": 2016,
+        //     "secretBase": "Super tower",
+        //     "active": true,
+        //     "members": [{
+        //             "name": "Molecule Man",
+        //             "age": 29,
+        //             "secretIdentity": "Dan Jukes",
+        //             "powers": [
+        //                 "Radiation resistance",
+        //                 "Turning tiny",
+        //                 "Radiation blast"
+        //             ]
+        //         },
+        //         {
+        //             "name": "Madame Uppercut",
+        //             "age": 39,
+        //             "secretIdentity": "Jane Wilson",
+        //             "powers": [
+        //                 "Million tonne punch",
+        //                 "Damage resistance",
+        //                 "Superhuman reflexes"
+        //             ]
+        //         },
+        //         {
+        //             "name": "Eternal Flame",
+        //             "age": 1000000,
+        //             "secretIdentity": "Unknown",
+        //             "powers": [
+        //                 "Immortality",
+        //                 "Heat Immunity",
+        //                 "Inferno",
+        //                 "Teleportation",
+        //                 "Interdimensional travel"
+        //             ]
+        //         }
+        //     ]
+        // };
+
+        // Ajax
+        $.get('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json', {page: 2}, function(response) {
+            console.log( 'response data ::', response );
+            printJSON(response);
+        });
+
+
+        function printJSON( json ) {
+            for ( var key in json ) {
+
+                var value1 = json[key];
+
+                if ( typeof value1 === 'object' ) {
+                    // 2차 반복문을 사용
+                    // console.log( key, value1, typeof value1 );
+                    for ( var key2 in value1 ) {
+                        
+                        var value2 = value1[key2];
+
+                        for ( var key3 in value2 ) {
+                            var value3 = value2[key3];
+
+                            var cls_name2 = ('0' + (parseInt(key2) + 1).toString()) + '_' + key3;
+
+                            if ( typeof value3 === 'object' ) {
+
+                                for ( var key4 in value3 ) {
+                                    var value4 = value3[key4];
+
+                                    $("."+ cls_name2 +" li").eq(key4).text(value4);
+
+                                    console.log( key4, value4, typeof value4 );
+                                }
+
+                                
+                            } else {
+                                $("."+ cls_name2).text(value3);
+
+                            }
+                        }
+                    }
+                } else {
+                    // 바로 출력
+                    var cls_name = key.toLowerCase();
+
+                    $("."+ cls_name).text(value1);
+                }
+            }
+        }
+       
+
+        $(document).ready(function () {
+            // 한번만 따라서 읽어보고 버리기.
+            
+
+
+
+        //    console.log(json);
+        //    var keys = Object.keys(json);
+        //    console.log(keys);
+        //    for ( var i in keys){
+        //        console.log('key='+keys[i]+',data='+json[keys[i]]);
+
+
+        //     if( i = 0, i < 6, i ++){
+        //       // $('th').eq(i).text(keys[i]);
+        //        $('td').eq(i).text(json[keys[i]])
+        //     }
+
+        
+
+           
+        //    }
+
+        
+        // var keys = Object.keys(json);
+
+        // for( var i in keys){
+        //     console.log(keys[i],json[keys[i]]);
+
+        // $('.squadname').text(json.squadName);
+        // $('.hometown').text(json.homeTown);
+        // $('.formed').text(json.formed);
+        // $('.secretbase').text(json.secretBase);
+        // $('.active').text(json.active);
+        // $('.01_name').text(json.members[0].name);
+        // $('.01_age').text(json.members[0].age);
+        // $('.01_si').text(json.members[0].secretIdentity);
+        // $('.01_powers li').eq(0).text(json.members[0].powers[0]);
+        // $('.01_powers li').eq(1).text(json.members[1].powers[1]);
+        // $('.01_powers li').eq(2).text(json.members[2].powers[2]);
+        // $('.02_name').text(json.members[1].name);
+        // $('.02_age').text(json.members[1].age);
+        // $('.02_secretIdentity').text(json.members[1].secretIdentity);
+        // console.log(Object.keys(json));
+        //alert(json.formed)
+
+        
+        //$('name').text(json.member[0].name)         
+           
+        });
+    </script>
+
+</body>
+
+</html>

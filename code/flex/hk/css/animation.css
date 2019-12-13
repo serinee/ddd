@@ -1,0 +1,221 @@
+#header .top_menu_wrap .menu_ico a span{transition: 0.5s}
+#header .top_menu_wrap .menu_ico a:hover span:first-child{transform: rotate(45deg) translate(5px,5px); }
+#header .top_menu_wrap .menu_ico a:hover span:last-child{transform: rotate(-45deg) translate(5px,-5px);}
+
+.section01 h2.animate{animation: title 4s cubic-bezier(0.215, 0.610, 0.355, 1.000);}
+/* @keyframes title{
+    0% {
+        transform: rotate(0);
+        opacity: 0.5;
+    }
+    100%{
+        transform: rotate(270deg);
+        opacity: 1;
+    }
+} */
+
+@keyframes title{
+    0%{
+        transform: rotate(0);
+        letter-spacing: 50px;
+        opacity:0;
+    }
+    40%{
+        opacity: 0.6;
+    }
+    100%{
+        transform: rotate(270deg);
+        letter-spacing: normal;
+        opacity:1;
+    }
+}
+
+.section02 .container .caption h3.animate{animation: sub_t01 1s; }
+@keyframes sub_t01{
+    0%{
+        color:red;
+        transform: translateX(-300px);
+    }
+   
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.section02 .container .caption p.animate{animation: caption_01 2s }
+@keyframes caption_01{
+    0%{
+        opacity:0;
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
+}
+
+
+
+.section02 .container .img.animate{animation: show 3s;}
+@keyframes show{
+    0%{
+        opacity:0;
+    }
+    
+    100%{
+        opacity:1;
+    }
+}
+
+.section03 .container .img.animate{animation: show_02 2s}
+@keyframes show_02{
+    0%{
+        opacity: 0;
+        transform: scale(3);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.section03 .container .caption{overflow: hidden;}
+.section03 .container .caption h3.animate{animation: sub_t02 1.5s}
+@keyframes sub_t02{
+    0%{
+        transform: translateX(0);
+    }
+    25%{opacity:0;
+        transform: translateX(-400px);
+    }
+    50%{
+        opacity:0;
+        transform: translateX(200%);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
+
+}
+
+.section03 .container .caption p span{transition: 2s;}
+.section03 .container .caption p span.animate{animation: changeC 2s;}
+@keyframes changeC{
+    0%{
+        color: red;
+    }
+    25%{
+        color:orange;
+    }
+    50%{
+        color:yellow;
+    }
+    75%{
+        color:green;
+    }
+    100%{
+        color:blue;
+    }
+}
+
+
+
+.section05 .img_hover_wrap .img_box .cover.animate{ opacity: 1; top: 0; }
+.section05 .img_hover_wrap .img_box .cover.animate .caption h4{animation: textUp 2s; }
+
+
+@keyframes textUp{
+    0% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section05 .img_hover_wrap .img_box .cover .caption a.animate{animation: button 1.2s;}
+@keyframes button{
+    0%{
+        transform: skewY(30deg) scale(1.5);
+        
+    }
+    50%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: skewY(0) scale(1);
+    }
+}
+
+
+.section06 .container.animate{animation:img_blur 2s;}
+@keyframes img_blur{
+    0% {
+        filter: blur(10px);
+    }
+    100%{
+        filter: none;
+    }
+}
+
+.section07 .container .img.animate{animation: img_sepia 2s;}
+@keyframes img_sepia{
+    0%{
+        opacity:0.5;
+        filter: sepia(100%);
+    }
+    100%{
+        opacity:1;
+        filter: none;
+       
+    }
+}
+
+.section07 .container .img img.animate{animation: img_scale 2s;}
+@keyframes img_scale{
+    0%{
+        transform: scale(2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.section07 .container .caption.animate{animation: caption 1.5s}
+@keyframes caption{
+    0%{
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+.section08 .container .con_wrap p.animate{animation: delay 2s}
+@keyframes delay{
+    0%{
+        opacity:0;
+        transform: translateY(-100%);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0);
+    }
+}
+
+.section08 .container .con_wrap div.animate{animation: delay_02 3s}
+@keyframes delay_02{
+    0%{
+        opacity:0;
+        transform: translateY(100%);
+    }
+    100%{
+        opacity:1;
+        transform: translateY(0);
+    }
+}

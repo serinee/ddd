@@ -1,0 +1,110 @@
+html,body{overflow-X: hidden; font-family: 'Reem Kufi', sans-serif;}
+#header{width: 100%;}
+#header .container{display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 40px;}
+#header .logo_wrap{}
+#header .logo_wrap h1 a{display: block; width: 60px; height: 60px; }
+#header .logo_wrap h1 a img{max-width: 100%;}
+#header .top_menu_wrap{display: flex;}
+#header .top_menu_wrap .nav{margin-right: 20px;}
+#header .top_menu_wrap .nav ul{}
+#header .top_menu_wrap .nav ul li{float: left; margin: 0 10px;}
+#header .top_menu_wrap .nav ul li a{text-transform: uppercase;}
+#header .top_menu_wrap .menu_ico{}
+#header .top_menu_wrap .menu_ico a{display: block;}
+#header .top_menu_wrap .menu_ico a span{display: block; width: 40px; height: 3px; margin-bottom: 10px; background: #000;}
+
+#contents{height: 100%;}
+.container{width: 1280px; margin: 0 auto;padding: 0 30px;}
+
+.section01{height: 800px; background-image:url('../images/generic_wp_1.jpg'); background-position: 0 0; background-repeat: no-repeat; background-size: 70%;}
+.section01 h2{float: right; margin-top: 100px; font-size: 80px; text-transform: uppercase; transform: rotate(-90deg);}
+
+
+.section02{margin-bottom: 30px; }
+section .container{display: flex; justify-content: space-between; padding-top: 100px; padding-left: 100px; padding-right: 100px;}
+section .container .caption{width: 60%;}
+section .container .caption h3{margin-bottom: 30px; font-size: 44px; font-weight: bold; text-transform: uppercase;}
+section .container .caption p{text-align: justify; line-height: 1.5;}
+section .container .img{overflow: hidden; width: 30%;}
+section .container .img img{width: 100%;}
+
+
+
+
+.section03{width: 100%; background: #f5f5f5;}
+.section03 .section_divider-bottom{width: 100%; transform-origin:center;}
+.section03 .section_divider-bottom svg{width: 100%; fill: #f5f5f5;}
+.section03 .container{display: flex; justify-content: space-between; padding: 100px;}
+.section03 .container .img{width: 45%; margin-top: 100px; }
+.section03 .container .img img{width: 100%;}
+.section03 .container h3{}
+.section03 .container .caption{width: 45%;}
+.section03 .container .caption p span{color: #000;}
+.section03 .container .caption p strong{display: block; margin-top: 30px; font-size: 50px; font-family: 'Mr De Haviland', cursive; text-align: right;}
+
+.section04{position: relative; width: 100%; height: 300px; margin-bottom: 100px; background-image: url('../images/market_wp.jpg'); background-repeat: no-repeat; background-position: 0 0; background-size: cover; background-attachment: fixed;}
+.section04 .bg{position: relative; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; background-color: rgba(0,0,0,0.3); }
+.section04 .bg:after{position: absolute; top: 7%; display: block; content: '';  width: 98%; height: 92%; border: 2px solid #fff; border-bottom:none;}
+.section04 .bg p{font-family: 'Mr De Haviland', cursive; font-size: 50px; color: #fff; }
+.section04 .bg span{display: block; margin-top: 40px; color: #fff;}
+
+.section05{width: 100%;}
+.section05 .img_hover_wrap{display: flex;}
+.section05 .img_hover_wrap .img_box{position: relative; width: 50%;}
+.section05 .img_hover_wrap .img_box img{width: 100%; height: 100%;}
+
+.section05 .img_hover_wrap .img_box .cover .caption{width: 30%; padding: 30px 20px;}
+.section05 .img_hover_wrap .img_box .cover .caption h4{margin-bottom: 30px; font-size: 24px; color: #ffffff;}
+.section05 .img_hover_wrap .img_box .cover .caption p{margin-bottom: 20px; font-size: 18px; color: #ffffff;}
+.section05 .img_hover_wrap .img_box .cover .caption a{display: block; width: 130px; padding: 8px; background: red; color: #ffffff; line-height: 1.5; text-align: center;}
+
+.section05 .img_hover_wrap .img_box .cover{opacity:0; position: absolute; left: 0; top: 100px; width: 100%; height: 100%; background: rgba(0,0,0,0.5); transition: 1s;}
+
+
+.section06{}
+.section06 .container{}
+.section06 .container .caption{width: 46%;}
+.section06 .container .img{width: 50%; margin-top: 100px;}
+.section06 .container .img div{width: 100%; margin: 100px 0; text-align: center;}
+.section06 .container .img div img{width: 60%;}
+
+.section07{background: #FDF2F6;}
+.section07 .container{flex-direction: row-reverse; padding-bottom: 30px;}
+.section07 .container .caption{width: 46%;}
+.section07 .container .img{width: 50%}
+.section07 .container .img .caption02{margin-top: 30px; text-align: center;}
+.section07 .container .img .caption02 h4{margin-bottom: 20px; font-size: 28px;}
+.section07 .container .img .caption02 h4 strong{color: red;}
+.section07 .container .img .caption02 .btn_wrap{display: flex; justify-content: space-between; width: 55%; margin: 0 auto;}
+.section07 .container .img .caption02 .btn_wrap a{display: block; width: 48%; padding: 13px; background: #000; color: #fff; line-height: 1.5;}
+.section07 .container .img .caption02 .paypal{margin-top: 20px;}
+.section07 .container .img .caption02 .paypal img{width: 7%;}
+.section07 .container .img .caption02 .paypal span{display: block;}
+
+.section08{}
+.section08 .container{display: block; fle x-direction: column; text-align: center; padding-bottom: 20px;}
+.section08 .container .sns_ico{display: flex; justify-content: center; margin-bottom: 30px;}
+.section08 .container .sns_ico div{ width: 4%; margin-right: 10px;}
+.section08 .container .sns_ico div img{float: left; width: 100%; }
+.section08 .container .con_wrap{display: flex; justify-content: space-between; margin-bottom: 30px;}
+.section08 .container .con_wrap p{width: 40%;}
+.section08 .container .con_wrap div{overflow: hidden; width: 45%; height: 250px; border: 2px solid red;}
+.section08 .container .con_wrap div img{width: 100%;}
+.section08 .container p{font-weight: bold;}
+
+#footer{background: #000; padding-bottom: 160px;}
+#footer .container{display: flex; justify-content: space-between; align-items: center; padding-top: 30px; padding-bottom: 30px;}
+#footer .container a{display: block; width: 20%;}
+#footer .container a img{width: 100%;}
+#footer .container p{text-align: right; color: #fff;}
+
+.fixed_bottom{width: 100%; position: fixed; bottom: 0;}
+.fixed_bottom .top{padding: 15px; background: rgba(0,0,0,0.5); text-align: center;}
+.fixed_bottom .top span{color: #fff; margin-right: 20px;}
+.fixed_bottom .top a{display: inline-block; width: 70px; padding: 10px; background: red; color: #fff; text-align: center;}
+.fixed_bottom .bottom{display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 20px; background: red; }
+.fixed_bottom .bottom .left{}
+.fixed_bottom .bottom .left div{float: left; margin-right: 10px;}
+.fixed_bottom .bottom .left div a{display: block; width: 140px; padding: 10px; color: #fff; border: 2px solid #fff; text-align: center;}
+.fixed_bottom .bottom .right{}
+.fixed_bottom .bottom .right a{color: #fff;}

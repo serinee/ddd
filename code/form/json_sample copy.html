@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="print"></div>
+    
+    <script>
+        
+        //https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+        var json = {
+  "squadName" : "Super hero squad",
+  "homeTown" : "Metro City",
+  "formed" : 2016,
+  "secretBase" : "Super tower",
+  "active" : true,
+  "members" : [
+    {
+      "name" : "Molecule Man",
+      "age" : 29,
+      "secretIdentity" : "Dan Jukes",
+      "powers" : [
+        "Radiation resistance",
+        "Turning tiny",
+        "Radiation blast"
+      ]
+    },
+    {
+      "name" : "Madame Uppercut",
+      "age" : 39,
+      "secretIdentity" : "Jane Wilson",
+      "powers" : [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name" : "Eternal Flame",
+      "age" : 1000000,
+      "secretIdentity" : "Unknown",
+      "powers" : [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}; 
+
+// for( var i in json ) {
+
+// }
+
+// 1단계 -> 아래 리터럴 구문에 직접 변수를 대입하기
+// 2단계는 아래 테이블 구조를 직접 HTML로 작성 후 jQuery 를 이용하여 값을 넣기 -> td 태그에 직접적으로 id, class 속성을 넣어도 무관
+// 3단계는 HTML을 직접 타이핑 하지 않고 자바 스크립트로만 구조를 만들어 #print 에 넣기 -> 같이하시죠..
+
+// $("#print").html('text');
+document.querySelector('#print').innerHTML = `
+<table>
+        <tbody>
+            <tr>
+                <th>squadName</th>
+                <td>${json.squadName}</td>
+            </tr>
+            <tr>
+                <th>homeTown</th>
+                <td>${json.homeTown}</td>
+            </tr>
+            <tr>
+                <th>formed</th>
+                <td>${json.formed}</td>
+            </tr>
+            <tr>
+                <th>secretBase</th>
+                <td>${json.secretBase}</td>
+            </tr>
+            <tr>
+                <th>active</th>
+                <td>${json.active}</td>
+            </tr>
+            <tr>
+                <th>members</th>
+                <td>
+                    <ul>
+                        <li>
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td>${json.members[0].name}</td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td>${json.members[0].age}</td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td>${json.members[0].secretIdentity }</td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td>
+                                        <ol>
+                                            <li>${json.members[0].powers[0]}</li>
+                                            <li>${json.members[0].powers[1]}</li>
+                                            <li>${json.members[0].powers[2]}</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td>${json.members[1].name}</td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td>${json.members[1].age}</td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td>${json.members[1].secretIdentity}</td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td>
+                                        <ol>
+                                            <li>${json.members[1].powers[0]}</li>
+                                            <li>${json.members[1].powers[1]}</li>
+                                            <li>${json.members[1].powers[2]}</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                        <li>
+                            <table>
+                                <tr>
+                                    <th>name</th>
+                                    <td>${json.members[2].name}</td>
+                                </tr>
+                                <tr>
+                                    <th>age</th>
+                                    <td>${json.members[2].age}</td>
+                                </tr>
+                                <tr>
+                                    <th>secretIdentity</th>
+                                    <td>${json.members[2].secretIdentity}</td>
+                                </tr>
+                                <tr>
+                                    <th>powers</th>
+                                    <td>
+                                        <ol>
+                                            <li>${json.members[2].powers[0]}</li>
+                                            <li>${json.members[2].powers[1]}</li>
+                                            <li>${json.members[2].powers[2]}</li>
+                                            <li>${json.members[2].powers[3]}</li>
+                                            <li>${json.members[2].powers[4]}</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+`;
+    </script>
+</body>
+</html>

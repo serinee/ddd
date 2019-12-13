@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>select</title>
+</head>
+<style>
+    .wrap {
+        margin: 50px;
+    }
+
+    .wrap .select_wrap {}
+
+    .wrap .select_wrap form {}
+
+    .wrap .select_wrap form legend {
+        display: none;
+    }
+
+    .wrap .select_wrap form .box {
+        position: relative;
+    }
+
+    .wrap .select_wrap form .box>a {
+        display: block;
+        width: 250px;
+        padding: 10px 20px;
+
+        background: #1FBDED;
+        color: #fff;
+        box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.3);
+        border: 1px solid #1FBDED;
+    }
+
+    .wrap .select_wrap form .box>a .down_ico {
+        float: right;
+        color: royalblue;
+        font-size: 18px;
+    }
+
+    .wrap .select_wrap form .box .options {
+        width: 250px;
+        margin-top: -1px;
+        border: 1px solid rgb(0, 65, 161);
+        display: none;
+    }
+
+    .wrap .select_wrap form .box .options li {}
+
+    .wrap .select_wrap form .box .options li a {
+        display: block;
+        width: 250px;
+        padding: 10px;
+        border: none;
+        transition: 0.3s;
+    }
+
+    .wrap .select_wrap form .box .options li:hover a {
+        width: 100%;
+        color: #fff;
+        background: rgb(255, 98, 98);
+    }
+
+    select option {
+        background: blue;
+        width: 200px;
+        padding: 10px;
+    }
+
+    .radio_wrap{}
+    .radio_wrap .title{width: 250px; height: 50px; padding: 10px; line-height: 50px; background: orange; color: #fff;}
+    .radio_wrap div{}
+    .radio_wrap div input[type=radio]{}
+    .radio_wrap div input[type=radio] + label{}
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="select_wrap">
+            <form action="">
+                <fieldset>
+                    <legend>select</legend>
+                    <div class="box">
+                        <a href="#">
+                            <span>all</span>
+                            <span class="down_ico"><i class="fas fa-angle-down"></i></span>
+                        </a>
+                        <ul class="options">
+                            <li class="first">
+                                <a href="#">all</a>
+                            </li>
+                            <li>
+                                <a href="#">ddd</a>
+                            </li>
+                            <li>
+                                <a href="#">fff</a>
+                            </li>
+                            <li>
+                                <a href="#">sss</a>
+                            </li>
+                            <li>
+                                <a href="#">ttt</a>
+                            </li>
+                        </ul>
+
+                        <select id="all">
+                            <option value="" class="text">all</option>
+                            <option value="ddd">ddd</option>
+                            <option value="fff">fff</option>
+                            <option value="sss">sss</option>
+                            <option value="ttt">ttt</option>
+                        </select>
+
+                        <div class="radio_wrap">
+                            <div class="title">
+                                <a href="#">day</a>
+                            </div>
+                            <div><input type="radio" id="mon" name="day" value="mon" checked="checked"><label
+                                    for="mon">mon</label></div>
+                            <div><input type="radio" id="tues" name="day" value="tues" checked="checked"><label
+                                    for="mon">tues</label></div>
+                            <div><input type="radio" id="wed" name="day" value="wed" checked="checked"><label
+                                    for="mon">wed</label></div>
+                            <div><input type="radio" id="thurs" name="day" value="thurs" checked="checked"><label
+                                    for="mon">thurs</label></div>
+                            <div><input type="radio" id="fri" name="day" value="fri" checked="checked"><label
+                                    for="mon">fri</label></div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.box a').click(function () {
+                $('.options').slideToggle();
+            });
+
+            $('#all').css({
+                width: 200,
+                padding: 10
+            });
+            $('#all option').css({
+                width: 200,
+                padding: 10
+            });
+
+
+        })
+
+        // 배열
+        var arr = [1,2,3,4,5];
+
+        // 오브젝트
+        var obj = {
+            key: '값',
+            name: '이세린',
+            list: [1,2,3,4,5],
+            age: 22,
+            again: {
+                data: 1234,
+            },
+            func: function(a){
+                return a;
+            }
+        };
+
+        
+    </script>
+</body>
+
+</html>

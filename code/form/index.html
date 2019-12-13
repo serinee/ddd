@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <title>form</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="top">
+            <h2>create Survey</h2>
+        </div>
+        <div class="body">
+            <div class="inner">
+                <form action="#" method="post">
+
+
+                    <dl class="left">
+                        <dt>아이디</dt>
+                        <dd class="id-wrap"><input type="text" id="id" name="id" class="id" placeholder="아이디를 입력하세요"><label for="id"></label></dd>
+
+                        <dt>비밀번호</dt>
+                        <dd>
+                            <label for="pw">
+                                <input type="password" id="pw" name="pw" class="pw" placeholder="비밀번호를 입력하세요">
+                            </label>
+                        </dd>
+
+                        <dt>성별</dt>
+                        <dd><input type="radio" id="female" name="gender" value="여성" checked="checked" class="gender">
+                            <label for="female">여성</label></dd>
+                        <dd>
+                            <input type="radio" id="male" name="gender" value="남성" class="gender">
+                            <label for="male">남성</label></dd>
+                    </dl>
+
+                    <dl class="center">
+                        <dt>혈액형</dt>
+                        <dd id="select_box">
+                            <label for="bloodtype">라라ㅏㄹ</label>
+                            <select name="bloodtype" id="bloodtype">
+                                <option value="a">a</option>
+                                <option value="b">b</option>
+                                <option value="c">c</option>
+                                <option value="d">d</option>
+                            </select>
+                        </dd>
+                    </dl>
+
+                    <dl class="radio-group">
+                        <dt>radio group label</dt>
+                        <dd><input type="radio" id="mon" name="day" value="mon" checked="checked" class="day"><label for="mon">Mon</label></dd>
+                        <dd><input type="radio" id="tues" name="day" value="tues" class="day"><label for="tues">Tues</label></dd>
+                        <dd><input type="radio" id="wed" name="day" value="wed" class="day"><label for="wed">Wed</label></dd>
+                        <dd><input type="radio" id="thurs" name="day" value="thurs" class="day"><label for="thurs">Thurs</label></dd>
+                        <dd><input type="radio" id="fri" name="day" value="fri" class="day"><label for="fri">Fri</label></dd>
+                    </dl>
+
+
+                    <dl class="right">
+                        <dt>checkbox</dt>
+                        <dd>
+                            <input type="checkbox" name="check1" id="program1" value="ㅇㅇㅇ" checked="checked">
+                            <label for="program1">ㅇㅇㅇ</label>
+                        </dd>
+                        <dd><input type="checkbox" name="check2" id="program2" value="ddd"><label
+                                for="program2">ddd</label></dd>
+                        <dd><input type="checkbox" name="check3" id="program3" value="fff"><label
+                                for="program3">fff</label></dd>
+
+                        <dt><label for="toggle">toggle</label></dt>
+                        <dd><input type="checkbox" name="toggle" id="toggle"><label for="toggle"></label></dd>
+                    </dl>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

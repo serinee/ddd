@@ -1,0 +1,130 @@
+#header{width: 100%;}
+#header {background: #1b2838;}
+#header .ad-wrap{display: flex; align-items: center; justify-content: center; height: 40px; background: #000;}
+#header .ad-wrap a{font-size: 14px; color: #fff}
+#header .ad-wrap a span{color: yellow; font-size: 12px;}
+#header .header-wrap{display: flex; justify-content: space-between; align-items: center; overflow: hidden; width: 1270px; height: 80px; padding: 0 25px; margin: 0 auto;   }
+#header .header-wrap .logo{width: 25%; height: 100%; }
+#header .header-wrap .logo h1{}
+#header .header-wrap .logo h1 a{display: block; width: 274px;}
+#header .header-wrap .logo h1 a img{width: 100%;}
+#header .header-wrap #nav{width: 45%;}
+#header .header-wrap #nav ul{display:flex; justify-content: space-around;}
+#header .header-wrap #nav ul li{padding: 0 20px;}
+#header .header-wrap #nav ul li a{font-size: 18px; font-weight: bold; color: #fff;}
+#header .header-wrap .ranking{width: 30%; height: 100%; display: flex; justify-content: space-between;}
+#header .header-wrap .ranking ul{display: flex; align-items: center; width: 84%; background: #243745;}
+
+#header .header-wrap .ranking ul li{}
+#header .header-wrap .ranking ul li .card-list{}
+#header .header-wrap .ranking ul li .card-list a{display: flex; justify-content: flex-start;}
+#header .header-wrap .ranking ul li .card-list a em{padding: 0 15px; font-size: 18px; font-weight: bold; color: #ff6e61}
+#header .header-wrap .ranking ul li .card-list a span{display: inline-block; width: 45px; height: 35px;}
+#header .header-wrap .ranking ul li .card-list a span img{width: 100%;}
+#header .header-wrap .ranking ul li .card-list a p{padding: 0 20px; font-size: 14px; font-weight: bold; color: lightgray; line-height: 1.8;}
+#header .header-wrap .ranking ul li .card-list a i{font-size: 22px; color: lightgray;}
+#header .header-wrap .ranking .search-ico-wrap{display: flex; justify-content: center; align-items: center; width: 16%;}
+#header .header-wrap .ranking .search-ico-wrap i{font-size: 25px; color: #ff6e61}
+
+#contents{width: 100%;}
+
+.container{width: 1270px; margin: auto; padding: 0 25px;}
+
+.ad{}
+.ad .container{}
+.ad .container a{display:flex; justify-content: flex-end;}
+.ad .container a img{}
+
+.section01{background: #000;}
+.section01 .container{}
+.section01 .container .card-selection-area{display: flex; justify-content: space-between; align-items: center; background: url('../images/home_selection_bg.jpg') 0 0 no-repeat;}
+.section01 .container .card-selection-area .card-selection-wrap{position: relative; width: 70%; height: 360px; padding: 35px 0;}
+.section01 .container .card-selection-area .card-selection-wrap .card-selection{position: absolute; left: 0; top: 0;  display: flex; align-items: center;  font-size: 14px; font-weight: bold; color: #fff; text-transform: uppercase;}
+.section01 .container .card-selection-area .card-selection-wrap .card-selection::before{position: absolute; left: 0;  top: 0; margin-right: 10px; display: block; content:''; width: 5%; height: 3px; background: #fff;}
+.section01 .container .card-selection-area .card-selection-wrap .card-selection::after{position: absolute; right: 0; top: 0; margin-left: 10px; display: block; content:''; width: 74%; height: 3px; background: #fff;}
+.section01 .container .card-selection-area .card-selection-wrap .card-selection .arrow-ico{display: inline-block; width: 15px; height: 15px; margin-left: 10px;}
+.section01 .container .card-selection-area .card-selection-wrap .card-selection .arrow-ico img{width: 100%;}
+.section01 .container .card-selection-area .card-selection-wrap a{display: flex; justify-content: space-between; padding: 50px;  border: 3px solid #fff; border-top: 0;}
+.section01 .container .card-selection-area .card-selection-wrap a .caption{}
+.section01 .container .card-selection-area .card-selection-wrap a .caption p{font-size: 32px; font-weight: bold; color: #fff; line-height: 1.5;}
+.section01 .container .card-selection-area .card-selection-wrap a .caption p strong{font-size: 24px; color: #a68b92;}
+.section01 .container .card-selection-area .card-selection-wrap a .caption span{display: block; margin-top: 10px; font-size: 20px; color: #fff; opacity: 0.8;}
+.section01 .container .card-selection-area .card-selection-wrap a .selection-imgwrap{width: 240px;}
+.section01 .container .card-selection-area .card-selection-wrap a .selection-imgwrap img{width: 100%;}
+
+.section01 .container .card-selection-area .recommend{width: 30%;}
+.section01 .container .card-selection-area .recommend .recmd-top{}
+.section01 .container .card-selection-area .recommend .recmd-top a{display: block; padding: 30px;}
+.section01 .container .card-selection-area .recommend .recmd-top a p{font-weight: bold; color: #fff; line-height: 1.7;}
+.section01 .container .card-selection-area .recommend .recmd-top a p strong{font-size: 14px; color:#ff6e61}
+.section01 .container .card-selection-area .recommend .recmd-top a span{font-size: 14px; color: #fff; opacity: 0.8;}
+.section01 .container .card-selection-area .recommend .recmd-bottom{}
+.section01 .container .card-selection-area .recommend .recmd-tt{position: relative; width: 90%; background: #ff6e61; text-transform: uppercase;}
+.section01 .container .card-selection-area .recommend .recmd-tt:after{position: absolute; right: -36px; top: 0; content:''; border-top: 43px solid #ff6e61 ; border-right: 36px solid transparent;} 
+.section01 .container .card-selection-area .recommend .recmd-tt p{padding: 5px 33px; font-size: 28px; color: #fff; text-transform: uppercase;}
+.section01 .container .card-selection-area .recommend .recmd-list{}
+.section01 .container .card-selection-area .recommend .recmd-list a{display: flex; align-items: center; padding: 5px 0 5px 40px;  }
+.section01 .container .card-selection-area .recommend .recmd-list a .card-imgwrap{display: flex; justify-content: center; align-items: center; width: 70px; height: 70px; margin-right: 20px;}
+.section01 .container .card-selection-area .recommend .recmd-list a .card-imgwrap img{max-width: 100%; }
+.section01 .container .card-selection-area .recommend .recmd-list a dl{}
+.section01 .container .card-selection-area .recommend .recmd-list a dl dt{text-transform: uppercase; color: #fff}
+.section01 .container .card-selection-area .recommend .recmd-list a dl dd{font-size: 14px; color: #ccc;}
+
+.section02{background: lightgray;}
+.section02 .container{padding-top: 100px; }
+/* 
+.section02 .container .gorilla-chart{position: relative; }
+.section02 .container .back-title{font-family: 'Fjalla One', sans-serif; font-size: 150px; color: #fff; text-transform: uppercase; text-align: center; opacity: 0.6; }
+.section02 .container h2{position: absolute; left: 50%; top: 63px; transform: translateX(-50%); font-family: 'Fjalla One', sans-serif; font-size: 44px; color: #ff6e61; letter-spacing: 15px;}
+.section02 .container .card-ranking-wrap{display: flex; flex-wrap:wrap; margin-top: -33px;}
+.section02 .container .card-ranking-wrap article{width: 400px; background: #fff; }
+.section02 .container .card-ranking-wrap article ul li:nth-of-type(odd){background: #fff;}
+.section02 .container .card-ranking-wrap article ul li:nth-of-type(even){background: #f4f4f4;}
+.section02 .container .card-ranking-wrap article .view-chart{display: block; width: 42%; margin: 30px auto; padding: 10px 20px; font-weight: bold; color: #fff; background: #ff6e61; border-radius: 5px; text-align: center;}
+.section02 .container .card-ranking-wrap article .caption h4{font-family: 'Fjalla One', sans-serif; text-transform: uppercase;}
+.section02 .container .card-ranking-wrap .chart-wrap{margin-left: 10px;}  
+.section02 .container .card-ranking-wrap .others{}
+.section02 .container .card-ranking-wrap .others a{}
+.section02 .container .card-ranking-wrap .others a .caption{display: flex; padding: 15px;}
+.section02 .container .card-ranking-wrap .others a .caption strong{width: 10%; font-size: 18px; color: #ff6e61;}
+.section02 .container .card-ranking-wrap .others a .caption p{width: 80%; font-size: 15px; color: gray;}
+.section02 .container .card-ranking-wrap .others a .caption div{width: 10%;}
+.section02 .container .card-ranking-wrap .others a .caption div i{}
+.section02 .container .card-ranking-wrap .others a .caption div span{}
+
+.section02 .container .card-ranking-wrap.common-gochart{padding: 10px;}
+
+.section02 .container .card-ranking-wrap .gorilla-top100{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul li{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01{padding: 20px; background: #1b2838;}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01 a{display: block;}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01 a .caption{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01 a .caption h4{font-size: 40px; color: #fff;}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01 a .caption strong{font-size: 48px; color: #ff6e61;}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .rank01 a .caption p{font-size: 18px; color: #fff;}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption strong{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption p{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption div{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption div i{}
+.section02 .container .card-ranking-wrap .gorilla-top100 ul .others a .caption div span{}
+
+.section02 .container .card-ranking-wrap .chart-wrap .common-gochart ul .rank01 a .caption h4{font-size: 30px; color: #000;}
+.section02 .container .card-ranking-wrap .chart-wrap .common-gochart ul .rank01 a .caption strong{font-size: 48px; color: #ff6e61;}
+.section02 .container .card-ranking-wrap .chart-wrap .common-gochart ul .rank01 a .caption p{font-size: 18px; color: #666;} */
+
+.gorilla-chart{}
+.gorilla-chart .container{}
+/* con-head */
+.gorilla-chart .container .con-head{}
+.gorilla-chart .container .con-head p{}
+.gorilla-chart .container .con-head h2{}
+/* con-body */
+.gorilla-chart .container .con-body{display: flex; justify-content: space-between;}
+.gorilla-chart .container .con-body .chart-sec{}
+.gorilla-chart .container .con-body .chart-sec .g-chart-area{box-shadow: -4px 3px 8px -2px rgba(0,0,0,0.5);}
+.gorilla-chart .container .con-body .chart-sec .g-chart-area ul li:nth-child(odd){background: #fff;}
+.gorilla-chart .container .con-body .chart-sec .g-chart-area ul li:nth-child(even){background: #666;}

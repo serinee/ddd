@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="css/03.css">
+    <title></title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <div class="right_con">
+                <form action="#">
+                    <fieldset>
+                        <legend>sign up</legend>
+                        <div class="sign_up_wrap">
+                            <div class="join_title">
+                                <h3>
+                                    <label for="name"></label>
+                                </h3>
+                                <span>
+                                    <input type="text">
+                                </span>
+                                <label for="name">이름<input type="text" name="name" id="name" placeholder="이름을 입력하세요"></label>
+                            </div>
+                        </div>
+
+
+                        <dl class="sign_up_wrap">
+                            <dt class="name"><label for="name">Name</label></dt>
+                            <dd><input type="text" name="name" id="name" placeholder="이름을 입력하세요"><label for="name"></label></dd>
+
+                            <dt>Gender</dt>
+                            <dd><input type="radio" name="gender" id="female" value="여성" checked="checked"><label for="female">여성</label><input type="radio" name="gender" id="male" value="남성"><label for="male">남성</label></dd>
+                            
+
+                            <dt>Email</dt>
+                            <dd><input type="text" name="email" id="email" placeholder="이메일 아이디를 입력하세요"><label for="email"></label>
+                                <select name="select_email" id="select_email">
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                </select>
+                            </dd>
+
+                            <dt>이메일 수신여부</dt>
+                            <dd><input type="radio" name="agree1" id="agree1" value="동의" checked="checked"><label for="agree1"></label></dd>
+
+                            <dt>문자 수신여부</dt>
+                            <dd><input type="radio" name="agree2" id="agree2" value="동의"><label for="agree2"></label></dd>
+                        </dl>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

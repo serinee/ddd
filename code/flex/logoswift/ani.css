@@ -1,0 +1,40 @@
+.section01 .inner .caption h2.animate{animation: title 2s;}
+@keyframes title{
+    0%{
+        transform: translateZ(400px) translateY(-300px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateZ(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+.section02 .inner .con_wrap article:first-of-type.animate{animation: blur 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both; }
+.section02 .inner .con_wrap article:nth-of-type(2).animate{animation: blur 1.2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both; }
+.section02 .inner .con_wrap article:last-of-type.animate{animation: blur 1.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both; }
+@keyframes blur{
+    0%{
+        transform: scale(2) translateY(100px);
+        filter: blur(4px);
+        opacity:0;
+    }
+    100%{
+        transform: scale(1) translateY(0);
+        filter: bulr(0);
+        opacity: 1;
+    }
+}
+
+.section03 .con-wrap .w50:first-child.animate{animation: color 3s;}
+@keyframes color{
+    0%{
+        background: #ffb8a9;
+    }
+    90%{
+        background: #ff441b;
+    }
+    100%{
+        background: #F46445;
+    }
+}

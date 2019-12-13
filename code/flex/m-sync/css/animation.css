@@ -1,0 +1,177 @@
+.section01 .container .con01-wrap .con-top .caption h2{animation: h2 2s;}
+@keyframes h2{
+    0%{
+        opacity:0;
+        transform: translateX(-200px);
+        letter-spacing:40px;
+    }
+}
+
+.section01 .container .con01-wrap .con-top .main-imgwrap .btn-more-wrap.animate a{animation: btn_01 2.5s;}
+@keyframes btn_01{
+    0%{
+        background:rgb(124, 75, 236);
+        transform: scale(1,1);
+    }
+    30%{
+        transform: scale(1.4, 0.5);
+    }
+    40%{
+        transform: scale(0.5, 1.4);
+    }
+    50%{
+        
+        transform: scale(1.2, 0.8);
+    }
+    60%{
+        transform: scale(0.9, 1.1);
+    }
+    75%{
+        transform: scale(1.1, 0.9);
+    }
+    100%{
+        
+        transform: scale(1,1);
+    }
+}
+
+.section02 .container ul li .c02-conbox .img-wrap.animate{animation: img_effect cubic-bezier(0.000, 0.000, 0.180, 1.055) 2s}
+@keyframes img_effect{
+    0%{
+        width: 0%;
+        height: 100%;
+    }
+    100%{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.section02 .container ul li .c02-conbox .caption.animate{animation: speedIn 1s;}
+@keyframes speedIn{
+    0%{
+        transform: translateX(100%) skewX(0deg);
+        opacity: 0;
+
+    }
+    100%{
+        transform: translateX(0%) skewX(30deg);
+        opacity: 1;
+    }
+}
+
+.deco.animate{animation: changeC 3s linear infinite;}
+@keyframes changeC{
+    0%{
+        opacity: 1;
+        color: rgb(124, 75, 236);
+        border-bottom-color: rgb(124, 75, 236);
+    }
+    50%{
+        opacity: 0.5;
+        color: rgb(245, 37, 0);
+        border-bottom-color: rgb(245, 37, 0);
+    }
+
+    100%{
+        opacity: 1;
+        color: rgb(4, 121, 255);
+        border-bottom-color: rgb(4, 121, 255);
+}
+
+}
+
+.section03.animate .container{animation: textUp 2s;}
+@keyframes textUp{
+    0%{
+        opacity:0;
+        transform: translate(-50%,100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,0);
+    }
+}
+
+.section04 .container .c04-wrap .c04-conbox .c04-imgwrap:hover a img{transform: scale(1.2);}
+
+.section04 .container .c04-wrap .c04-conbox:first-of-type.animate{animation: conboxUp 2s;}
+.section04 .container .c04-wrap .c04-conbox:nth-of-type(2).animate{animation: conboxUp 2.5s;}
+.section04 .container .c04-wrap .c04-conbox:last-of-type.animate{animation: conboxUp 3s;}
+@keyframes conboxUp{
+    0%{
+        opacity: 0;
+        transform: translate(0,200px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+.section04 .container .c04-wrap .c04-conbox .caption .deco{position: relative; z-index: 1; }
+.section04 .container .c04-wrap .c04-conbox .caption .deco::after{position: absolute; right: -25px; top: -25px; z-index:-1; opacity:0; content:''; width: 50px; height: 50px; background: #f8877a; border-radius: 50%; transform: scale(0.5);  transition: all 0.7s;}
+.section04 .container .c04-wrap .c04-conbox .caption .deco:hover::after{opacity:1; transform: scale(1.1);}
+
+.section05 .container .c05-wrap .left.animate{animation: left 1s;}
+@keyframes left{
+    0%{
+        transform: rotate(-540deg) scale(0);
+        opacity: 0;
+    }
+
+    100%{
+        transform: rotate(0) scale(1);
+        opacity: 1;
+
+    }
+}
+
+.section05 .container .c05-wrap .right ul li .caption .deco.animate{animation: skew 1s;}
+@keyframes skew{
+    0%{
+        transform: skew(30deg,0);
+    }
+    25%{
+        transform: skew(-30deg,0);
+    }
+    50%{
+        transform: skew(10deg,0);
+    }
+    75%{
+        transform: skew(-10deg,0);
+    }
+    100%{
+        transform: skew(0,0);
+    }
+}
+
+.section05 .container .c05-wrap .c05-conbox ul li .imgwrap .slit.animate{animation: slitIn 0.6s;}
+@keyframes slitIn{
+    0%{
+        transform: translateZ(-800px) rotateY(90deg);
+    }
+    50%{
+        transform: translateZ(-160px) rotateY(87deg);
+    }
+    100%{
+        transform: translateZ(0) rotateY(0);
+    }
+}
+.menu-wrap.on{animation: slide-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;}
+@-webkit-keyframes slide-center{
+    0%{
+        tra nsform-origin: center ;
+        
+        transform: scale(-2);
+        
+        opacity: 0;
+    }
+    100%{
+        trans orm-origin: center ;
+        
+        transform: scale(1);
+        
+        opacity: 1;
+    }
+}

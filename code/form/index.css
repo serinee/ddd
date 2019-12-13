@@ -1,0 +1,45 @@
+body{margin: 0;}
+.wrap{width:1080px;  }
+.wrap .top{height: 30px; padding: 12px; background:  #0084ff; border-radius: 10px 10px 0 0  ; line-height: 30px; text-transform: uppercase;}
+.wrap .top h2{margin: 0; font-size: 24px; color: #fff;}
+.wrap .body{background:#f1f1f1; border-radius: 0 0 10px 10px;}
+.wrap .body .inner{padding: 20px;}
+.wrap .body .inner form{display: flex; justify-content: space-between; }
+
+form dl{width: 25%;}
+form dl dt{margin-bottom: 10px;}
+form dl dd{margin-left: 0; margin-bottom: 20px;}
+form dl dd input{}
+form dl dd input.gender[type="radio"]{display: none;}
+.left{}
+.left .id{}
+
+.left .gender + label{position: relative; padding-left: 20px;}
+.left .gender + label::before{ position: absolute; left: 0; top: 50%; transform: translateY(-50%); content: ''; width: 10px; height: 10px; border: 1px solid #0084ff; background: #fff; border-radius: 50%; }
+.left .gender:checked + label::after{position: absolute; left: 3px; top: 50%; transform: translateY(-50%); content: ''; width: 6px; height: 6px;  background: #0084ff; border-radius: 50% }
+
+.center{}
+.center dt{}
+.center dd{}
+.center dd select{width: 200px; height: 25px; padding: 0 10px; border-radius: 10px; border: none; }
+
+.right{}
+.right .dt{}
+.right dd input{display: none;}
+.right dd label{position: relative; padding-left: 20px;}
+.right dd label::before{position: absolute; left: 0; top: 50%; transform: translateY(-50%); content: ''; width: 12px; height: 12px; border: 1px solid gray; background: #fff;}
+.right dd input:checked + label::before{background: #0084ff;}
+.right dd input:checked + label::after{position: absolute; left: 2px; top: 50%; transform: translateY(-50%); content:"\f00c"; color: #fff; font-family: "Font Awesome 5 Free"; font-size: 10px; font-weight: 900;   }
+
+.radio-group{}
+.radio-group dt{}
+.radio-group dd{float: left; margin-left: -1px;}
+.radio-group dd label{display: inline-block; width: 50px; height: 30px; line-height: 30px; background: #fff; color: #0084ff; text-align: center; border: 1px solid #dcdcdc; font-size: 14px;}
+.radio-group dd input:checked+ label{background: #0084ff; color: #fff; border-color: #0084ff;}
+.radio-group dd input[type="radio"]{display: none;}
+.radio-group dd:first-of-type label{border-radius: 5px 0 0 5px;}
+.radio-group dd:last-of-type label{border-radius: 0 5px 5px 0;}
+
+#select_box{position: relative; width: 200px; height: 40px; border: 1px solid red; }
+#select_box label{position: absolute; left: 12px; top: 13px; font-size: 14px; color: red;}
+#select_box #bloodtype{width: 100%; height: 40px; padding: 0 10px; opacity: 0;}
