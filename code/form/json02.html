@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>squadname</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>hometown</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>formed</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>secretbase</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>active</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>members</th>
+            <td></td>
+        </tr>
+    </table>
+
+    <script>
+
+        https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+        var json = {
+            "squadName": "Super hero squad",
+            "homeTown": "Metro City",
+            "formed": 2016,
+            "secretBase": "Super tower",
+            "active": true,
+            "members": [{
+                    "name": "Molecule Man",
+                    "age": 29,
+                    "secretIdentity": "Dan Jukes",
+                    "powers": [
+                        "Radiation resistance",
+                        "Turning tiny",
+                        "Radiation blast"
+                    ]
+                },
+                {
+                    "name": "Madame Uppercut",
+                    "age": 39,
+                    "secretIdentity": "Jane Wilson",
+                    "powers": [
+                        "Million tonne punch",
+                        "Damage resistance",
+                        "Superhuman reflexes"
+                    ]
+                },
+                {
+                    "name": "Eternal Flame",
+                    "age": 1000000,
+                    "secretIdentity": "Unknown",
+                    "powers": [
+                        "Immortality",
+                        "Heat Immunity",
+                        "Inferno",
+                        "Teleportation",
+                        "Interdimensional travel"
+                    ]
+                }
+            ]
+        };
+
+
+        for ( var key in json){
+            var value1 = json[key];
+            console.log(value1);
+            if( typeof value1 === 'object'){
+                for ( var key2 in value1){
+                    var value2 = value1[key2];
+                    console.log(value2);
+                    for(var key3 in value2){
+                        var value3 = value2[key3];
+                        console.log(value3);
+                        var cls_name2= ('0' + (parseInt(key2)+1).toString()) + '_' + key3;
+
+                        if ( typeof value3 === 'object') {
+                            for ( var key4 in value3){
+                                console.log(key4);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
