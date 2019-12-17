@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="index.css">
-    <title>wishtrend</title>
+    <title>wishtrend02</title>
 </head>
 
 <body>
@@ -84,7 +84,7 @@
 
             // $('.product').hover(function () {
             //     $(this).toggleClass('on');
-            // });
+            // }); // <- 밑에서 productlist를 비우고 다시 로드해서 이 이벤트는 지워짐. 동작 X
 
             $(".productlist").on('mouseenter', '.product', function(){
                 $(this).addClass('on');
@@ -130,7 +130,7 @@
                     <a href="#">
                         <div class="pdt_thumb">
                             <div class="img" style="background-image: url(https://www.wishtrend.com${data[i].thumbnail});"></div>
-                            <div class="hover-img"></div>
+                            <div class="hover-img" style="background-image: url(https://www.wishtrend.com${data[i].thumbnail_hover});"></div>
                             <div class="quickshop">
                                 <p>QUICKSHOP</p>
                             </div>
@@ -143,15 +143,15 @@
                         </div>
                         <div class="pdt_info">
                             <div class="info_brand">
-                                <h3></h3>
+                                <h3>${data[i].brand}</h3>
                             </div>
                             <div class="info_name">
                                 <h3>${data[i].post_title}</h3>
                             </div>
                             <div class="info_price">
                                 <h3>
-                                    <p></p>
-                                    <del></del>
+                                    <p>${price(data[i].regular_price)}</p>
+                                    <del>${data[i].sale_price}</del>
                                     <span class="dc"></span>
                                 </h3>
                             </div>
@@ -160,7 +160,7 @@
                             <div class="rating">
                                 ${makeStar(data[i].review_rating)}
                                 <div class="count">
-                                    <span></span>
+                                    <span>${'&lpar;'+data[i].review+'&rpar;'}</span>
                                 </div>
                             </div>
                         </div>
@@ -190,6 +190,14 @@
             </div>
             `;
         }
+
+        function price(regular){
+           console.log(regular);
+          
+          
+        }
+
+        
 
     </script>
 </body>

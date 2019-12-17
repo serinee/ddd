@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>squadname</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>hometown</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>formed</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>secretbase</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>active</th>
+            <td></td>
+        </tr>
+        <tr>
+            <th>members</th>
+            <td>
+                <ul>
+                    <li class="members_01">
+                        <table>
+                            <tr>
+                                <th>name</th>
+                                <td class="01_name"></td>
+                            </tr>
+                            <tr>
+                                <th>age</th>
+                                <td class="01_age"></td>
+                            </tr>
+                            <tr>
+                                <th>secretIdentity</th>
+                                <td class="01_secretIdentity"></td>
+                            </tr>
+                            <tr>
+                                <th>powers</th>
+                                <td class="01_powers">
+                                    <ol>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li class="members_02">
+                        <table>
+                            <tr>
+                                <th>name</th>
+                                <td class="02_name"></td>
+                            </tr>
+                            <tr>
+                                <th>age</th>
+                                <td class="02_age"></td>
+                            </tr>
+                            <tr>
+                                <th>secretIdentity</th>
+                                <td class="02_secretIdentity"></td>
+                            </tr>
+                            <tr>
+                                <th>powers</th>
+                                <td class="02_powers">
+                                    <ol>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li class="members_03">
+                        <table>
+                            <tr>
+                                <th>name</th>
+                                <td class="03_name"></td>
+                            </tr>
+                            <tr>
+                                <th>age</th>
+                                <td class="03_age"></td>
+                            </tr>
+                            <tr>
+                                <th>secretIdentity</th>
+                                <td class="03_secretIdentity"></td>
+                            </tr>
+                            <tr>
+                                <th>powers</th>
+                                <td class="03_powers">
+                                    <ol>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    
+                    
+                </ul>
+            </t>
+        </tr>
+    </table>
+
+    <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+        var json = {
+            "squadName": "Super hero squad",
+            "homeTown": "Metro City",
+            "formed": 2016,
+            "secretBase": "Super tower",
+            "active": true,
+            "members": [{
+                    "name": "Molecule Man",
+                    "age": 29,
+                    "secretIdentity": "Dan Jukes",
+                    "powers": [
+                        "Radiation resistance",
+                        "Turning tiny",
+                        "Radiation blast"
+                    ]
+                },
+                {
+                    "name": "Madame Uppercut",
+                    "age": 39,
+                    "secretIdentity": "Jane Wilson",
+                    "powers": [
+                        "Million tonne punch",
+                        "Damage resistance",
+                        "Superhuman reflexes"
+                    ]
+                },
+                {
+                    "name": "Eternal Flame",
+                    "age": 1000000,
+                    "secretIdentity": "Unknown",
+                    "powers": [
+                        "Immortality",
+                        "Heat Immunity",
+                        "Inferno",
+                        "Teleportation",
+                        "Interdimensional travel"
+                    ]
+                }
+            ]
+        };
+
+
+       for( var key in json){
+           var value1 = json[key];
+           //console.log(key);
+           //console.log(value1);
+           if( typeof value1 === 'object'){
+               // console.log(key);
+                //console.log(value1);
+                //console.log(typeof value1);
+                //2차 반복문사용
+                for (var key2 in value1){
+                    //console.log(key2);
+                    var value2 = value1[key2];
+                    //console.log(value2);
+                    for( var key3 in value2){
+                        //console.log(key3);
+                        var value3 = value2[key3];
+                       // console.log(value3);
+                       var cls_name2 = ('0' + (parseInt(key2) + 1).toString()) + '_' + key3;
+                       //console.log(cls_name2);
+                       if ( typeof value3 === 'object'){
+                           for ( var key4 in value3){
+                               var value4 = value3[key4];
+                               $("." + cls_name2 + " li").eq(key4).text(value4);
+                               //console.log(key4);
+                               //console.log(value4);
+                               //console.log(typeof value4);
+                           }
+                       }else{
+                               $("."+ cls_name2).text(value3);
+                               //console.log($("."+ cls_name2).text(value3))
+                           }
+                    }
+
+                }
+           } else{
+               //바로 출력
+               var cls_name = key.toLowerCase(); //클래스 이름이 소문자니까.
+               
+               $("." + cls_name).text(value1);
+               console.log($("." + cls_name).text(value1))
+           }
+       }
+    </script>
+</body>
+</html>
