@@ -1,6 +1,6 @@
 #contents{max-width: 1300px;}
-.productlist_wrap{width: 100%; position: relative;}
-.productlist_wrap .productlist{display: flex; flex-flow: wrap;}
+.productlist_wrap{position: relative; width: 100%; padding-bottom: 40px; }
+.productlist_wrap .productlist{display: flex; flex-flow: wrap; mar gin-bottom: 20px;}
 .productlist_wrap .productlist .product{width: 23%; margin: 10px;}
 .productlist_wrap .productlist .product a{text-align: center;}
 .productlist_wrap .productlist .product a .pdt_thumb{position: relative; overflow: hidden; padding-bottom: 100%; }
