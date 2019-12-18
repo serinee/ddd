@@ -92,10 +92,11 @@
                 $(this).removeClass('on');
             });
 
-            $('.btn_like').click(function () {
-                $('.show').hide();
-                $('.fill').show();
-                return false;
+            $(".btn_like").on('click','.show', function () {
+                $(this).toggle();
+            });
+            $(".btn_like").on('click','.fill', function () {
+                $(this).toggle();
             });
         })
 
@@ -119,6 +120,10 @@
             printProduct(response.data.products);
         });
 
+        function printPage(page) {
+
+        }
+
         function printProduct(data) {
 
             $(".productlist").empty();
@@ -129,6 +134,7 @@
                 <div class="product">
                     <a href="#">
                         <div class="pdt_thumb">
+                            
                             <div class="img" style="background-image: url(https://www.wishtrend.com${data[i].thumbnail});"></div>
                             <div class="hover-img" style="background-image: url(https://www.wishtrend.com${data[i].thumbnail_hover});"></div>
                             <div class="quickshop">
@@ -142,6 +148,7 @@
                             </div>
                         </div>
                         <div class="pdt_info">
+                            <!-- <div class="is_vegan">${data[i].is_vegan}</div> -->
                             <div class="info_brand">
                                 <h3>${data[i].brand}</h3>
                             </div>
@@ -172,13 +179,13 @@
 
                 function price() {
                     let regular_price = data[i].regular_price * 1;
-                    console.log(regular_price);
+                    //console.log(regular_price);
                     let sale_price = data[i].sale_price * 1;
-                    console.log(sale_price);
+                    //console.log(sale_price);
                     let price_html = '';
 
                     let dc_price = Math.ceil(100 - (sale_price / regular_price * 100));
-                    console.log(dc_price);
+                    //console.log(dc_price);
 
                     if (regular_price === sale_price) {
                         price_html = `<p>$${regular_price.toFixed(2)}</p>`;
@@ -195,8 +202,6 @@
                     </h3>
                     `;
                 }
-
-
                 //함수를 굳이 안써도 된다 ,, 
                 // function price(){
                 //     let price_html='';
@@ -214,6 +219,18 @@
                 // }
 
                 // }
+
+                // let is_vegan = data[i].is_vegan;
+                // if(is_vegan = 'Y'){
+                //     true;
+                // }else{
+                //     false;
+                // }
+                // console.log(is_vegan);
+
+
+           
+                
 
 
             }
