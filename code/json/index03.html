@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="index.css">
-    <title>wishtrend</title>
+    <title>wishtrend02</title>
 </head>
 
 <body>
@@ -20,41 +20,137 @@
 
             </div>
 
+            <div class="pop_quick_wrap">
+                <div class="inner">
+                
+                    <div class="slider_wrap">
+                        
+                        <div class="top_slide_area">
+                            <div class="top_slide">
+                                <div class="big_img">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <div class="btn_prev">
+                                &lt;
+                            </div>
+                            <div class="btn_next">
+                                &gt;
+                            </div>
+                            
+                        </div>
+
+                        <div class="bottom_slide_area">
+                            <div class="bottom_slide">
+                                <div class="small_img">
+                                    <img src="" alt="">
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="info_wrap">
+                        <div class="txt_area">
+                            <div class="info_brand">
+                                <h3></h3>
+                            </div>
+                            <div class="info_name">
+                                <h3></h3>
+                            </div>
+                            <div class="rating">
+                                <div class="count">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="info_price">
+                                <h3>
+                                    <p></p>
+                                    <del></del>
+                                    <span class="dc"></span>
+                                </h3>
+                            </div>
+                            <div class="info_description">
+                                <p></p>
+                            </div>
+                            <div class="view_detail">
+                                <a href="#">VIEW DETAIL &gt;</a>
+                            </div>
+
+                        </div>
+                        <div class="form_area">
+                            <div class="select_wrap">
+                                <form action="">
+                                    <fieldset>
+                                        <legend></legend>
+                                        <div class="popselect">
+                                            <div class="selected select_pdt">
+                                                <a href="#">
+                                                    <span>1 Mugwort Essence</span>
+                                                </a>
+                                                <ul class="options">
+                                                    <li class="active"><a href="#">1 Mudeddddgwort Essence</a></li class="active">
+                                                </ul>
+
+                                                <select name="variation">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                            <div class="selected select_num">
+                                                <a href="#">
+                                                    <span>1</span>
+                                                </a>
+                                                <ul class="options">
+                                                    <li><a href="#">1</a></li>
+                                                </ul>
+                                                <select name="quantity">
+                                                    <option value=""></option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="btn_wrap">
+                                            <div class="add_to_cart">
+                                                <button type="button" class="btn_addcart">ADD TO CART</button>
+                                            </div>
+                                            <div class="wishlist">
+                                                <button type="button" class="btn_wish"><span></span>WISHLIST</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="pop_close">
+                        <img src="images/closebtn.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+
             <div class="pagenavi_wrap">
                 <div class="pagenav">
-                    <ul>
+                    
+                    <!-- <ul>
                         <li><a href="#">&lt;&lt;</a></li>
-                        <li><a href="#">1</a></li>
-                        <li class="active"><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#">9</a></li>
-                        <li><a href="#">10</a></li>
-                        <li><a href="#">11</a></li>
-                        <li><a href="#">12</a></li>
-                        <li><a href="#">13</a></li>
-                        <li><a href="#">14</a></li>
-                        <li><a href="#">15</a></li>
-                        <li><a href="#">16</a></li>
-                        <li><a href="#">17</a></li>
-                        <li><a href="#">18</a></li>
-                        <li><a href="#">19</a></li>
-                        <li><a href="#">20</a></li>
+                        <li><a href="#">${makePage()}</a></li>
                         <li><a href="#">&gt;&gt;</a></li>
-                    </ul>
-
+                    </ul> -->
                 </div>
 
             </div>
+
+            
 
         </div>
     </div>
 
     <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="js/index03.js"></script>
     <script>
         // $(document).ready(function(){
         //     $('.product').hover(function(){
@@ -118,11 +214,58 @@
             // var is_success = ( response.success === true ? true : false );
 
             printProduct(response.data.products);
+
+            printPage(response.data.max_page);
+            
         });
 
-        function printPage(page) {
+        function printPage(page){
+            $(".pagenav").empty();
+            let max_page = page;
+            console.log(max_page);
 
+            for ( let i in page){
+                let html = `
+                <ul>
+                    <li><a href="#">${printPage()}</a></li>
+                </ul>
+                `;
+
+                $(".pagenav").append(html);  
+
+                let page_html = '';
+            
+            for( let i = 0; i < max_page; i ++){
+             `<li><a href="#">$</a></li>`
+            }
+            console.log(max_page)
+
+            return `
+             <ul>
+                 ${page_html}
+             </ul>
+                 `;
+         
+         }
+
+
+            }
+
+            function makePage(paging){
+            
         }
+        
+
+        // function printPage(page) {
+        //     $(".pagenav").empty();
+            
+        //     console.log(max_page);
+            
+        // }
+
+        // function makePage(pagelist){
+        //     let max_page = page * 1;
+        // }
 
         function printProduct(data) {
 
@@ -173,6 +316,7 @@
                     </a>
                 </div>
                 `;
+                
 
                 $(".productlist").append(html);
 
@@ -235,6 +379,8 @@
 
             }
         }
+
+        
 
         function makeStar(rating) {
             // 별점을 반올림 합니다.
