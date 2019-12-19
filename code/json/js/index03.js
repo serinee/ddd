@@ -29,20 +29,34 @@ $(document).ready(function () {
     //     $('.show').toggle();
     //     $('.fill').toggle();
     // });
+    $('.productlist').on('click','.btn_like',function(){
+        $('.show').toggle();
+        $('.fill').toggle();
+    })
 
-    $(".quickshop").on('click', function () {
-        $(".pop_quick_wrap").show();
+    //html에 있는 클래스로 인식~~
+    $('.productlist').on('click','.quickshop p' ,function () {
+        $(".pop_quickshop_zone").show();
         
     });
 
-    // $(".quickshop").click(function(){
-    //     $(".pop_quick_wrap").show();
-    //     alert('dd')
-    // })
+    $('.pop_close').on('click' ,function () {
+        $(".pop_quickshop_zone").hide();
+        
+    });
+
+    $('.productlist').on('click','.selected a' ,function () {
+        $(".options li").show();
+        $(".options li").slideDown();
+        
+    });
 
 
 
-})
+
+});
+
+
 
 let url = 'http://stage.wishtrend.com/wp-json/wt/v1/products/shop/all?sort=&page=1&offset=16';
 
