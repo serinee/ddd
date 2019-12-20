@@ -10,6 +10,7 @@
     <title>wishtrend02</title>
 </head>
 
+
 <body>
     <div id="contents">
         <div class="productlist_wrap">
@@ -26,25 +27,34 @@
                         <div class="inner">
                         
                             <div class="slider_wrap">
-                                
-                                <div class="top_slide_area">
-                                    <div class="top_slide">
-                                        <div class="big_img">
-                                            <img src="" alt="">
+                                <div class="top_slide_area swiper-container">
+                                    <div class="top_slide swiper-wrapper">
+                                        <div class="big_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                        </div>
+                                        <div class="big_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                        </div>
+                                        <div class="big_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                        </div>
+                                        <div class="big_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                        </div>
+                                        <div class="big_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
                                         </div>
                                     </div>
-                                    <div class="btn_prev">
-                                        &lt;
+                                    <div class="swiper-button-prev">
                                     </div>
-                                    <div class="btn_next">
-                                        &gt;
+                                    <div class="swiper-button-next">
                                     </div>
                                     
                                 </div>
         
-                                <div class="bottom_slide_area">
-                                    <div class="bottom_slide">
-                                        <div class="small_img">
+                                <div class="bottom_slide_area swiper-container">
+                                    <div class="bottom_slide swiper-wrapper">
+                                        <div class="small_img swiper-slide">
                                             <img src="" alt="">
                                         </div>
                                         
@@ -88,10 +98,10 @@
                                                 <div class="popselect">
                                                     <div class="selected select_pdt">
                                                         <a href="#">
-                                                            <span>1 Mugwort Essence</span>
+                                                            <span></span>
                                                         </a>
                                                         <ul class="options">
-                                                            <li class="active"><a href="#">1 Mudeddddgwort Essence</a></li class="active">
+                                                            <li class="active"><a href="#"></a></li class="active">
                                                         </ul>
         
                                                         <select name="variation">
@@ -100,10 +110,10 @@
                                                     </div>
                                                     <div class="selected select_num">
                                                         <a href="#">
-                                                            <span>1</span>
+                                                            <span></span>
                                                         </a>
                                                         <ul class="options">
-                                                            <li><a href="#">1</a></li>
+                                                            <li><a href="#"></a></li>
                                                         </ul>
                                                         <select name="quantity">
                                                             <option value=""></option>
@@ -155,9 +165,22 @@
         </div>
     </div>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <script src="../js/jquery-3.4.1.min.js"></script>
-    <script src="js/index03.js"></script>
     
+
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+
+<script>
+    var mySwiper = new Swiper ('.top_slide_area ',{
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+
+</script>
+<script src="js/index03.js"></script>
 </body>
 
 </html>

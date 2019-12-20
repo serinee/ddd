@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    
+    
 
     //     $('.pdt_thumb').mouseover(function(){
     //         $('.hover-img').css({visibility: "inherit", opacity:"1"});
@@ -29,25 +31,34 @@ $(document).ready(function () {
     //     $('.show').toggle();
     //     $('.fill').toggle();
     // });
-    $('.productlist').on('click','.btn_like',function(){
-        $('.show').toggle();
-        $('.fill').toggle();
+    // $('.productlist').on('click','.btn_like',function(){
+    //     $('.show').toggle();
+    //     $('.fill').toggle();
+    // })
+
+    $('.productlist').on('click','.show',function(){
+        $(this).hide();
+    }).on('click','.fill',function(){
+        $(this).show();
     })
 
     //html에 있는 클래스로 인식~~
+    $('.pop_quickshop_zone').hide();
     $('.productlist').on('click','.quickshop p' ,function () {
         $(".pop_quickshop_zone").show();
         
     });
 
-    $('.pop_close').on('click' ,function () {
+
+//팝업 닫기 
+    $('.productlist_wrap').on('click','.pop_close', function(){
         $(".pop_quickshop_zone").hide();
-        
-    });
+    })
 
-    $('.productlist').on('click','.selected a' ,function () {
-        $(".options li").show();
-        $(".options li").slideDown();
+
+    $('.pop_quickshop_zone').on('click','.selected' ,function () {
+        //$(".options").show();
+        $(this).find('.options').slideToggle();
         
     });
 
@@ -58,64 +69,70 @@ $(document).ready(function () {
 
 
 
-let url = 'http://stage.wishtrend.com/wp-json/wt/v1/products/shop/all?sort=&page=1&offset=16';
 
-// jquery 의 ajax 메소드?
-// $.get / $.getJSON / $.post / $.ajax
-$.get(url, {}, function (response) {
-    console.log(response);
+function getProductData( page ) {
+    let url = `http://stage.wishtrend.com/wp-json/wt/v1/products/shop/all?sort=&page=${page}&offset=16`;
 
-    // var is_success;
+    // jquery 의 ajax 메소드?
+    // $.get / $.getJSON / $.post / $.ajax
+    $.get(url, {}, function (response) {
+        console.log(response);
 
-    // if ( response.success === true ) {
-    //     is_success = true;
-    // } else {
-    //     is_success = false;
-    // }
-    // 삼항연산자.
-    // var is_success = ( response.success === true ? true : false );
+        // var is_success;
 
-    printProduct(response.data.products);
+        // if ( response.success === true ) {
+        //     is_success = true;
+        // } else {
+        //     is_success = false;
+        // }
+        // 삼항연산자.
+        // var is_success = ( response.success === true ? true : false );
 
-    printPage(response.data.max_page);
+        printProduct(response.data.products);
 
-});
+        //printPage(response.data.max_page);
 
-function printPage(page) {
-    $(".pagenav").empty();
-    let max_page = page;
-    console.log(max_page);
-
-    for (let i in page) {
-        let html = `
-                <ul>
-                    <li><a href="#">${printPage()}</a></li>
-                </ul>
-                `;
-
-        $(".pagenav").append(html);
-
-        let page_html = '';
-
-        for (let i = 0; i < max_page; i++) {
-            `<li><a href="#">$</a></li>`
-        }
-        console.log(max_page)
-
-        return `
-             <ul>
-                 ${page_html}
-             </ul>
-                 `;
-
-    }
-
-
+    });
 }
 
-function makePage(paging) {
+getProductData(1);
 
-}
+
+// function printPage(page) {
+//     $(".pagenav").empty();
+//     let max_page = page;
+//     console.log(max_page);
+
+//     for (let i in page) {
+//         let html = `
+//                 <ul>
+//                     <li><a href="#">${printPage()}</a></li>
+//                 </ul>
+//                 `;
+
+//         $(".pagenav").append(html);
+
+//         let page_html = '';
+
+//         for (let i = 0; i < max_page; i++) {
+//             `<li><a href="#">$</a></li>`
+//         }
+//         console.log(max_page)
+
+//         return `
+//              <ul>
+//                  ${page_html}
+//              </ul>
+//                  `;
+
+//     }
+
+
+// }
+
+// function makePage(paging) {
+
+// }
 
 
 // function printPage(page) {
@@ -180,6 +197,7 @@ function printProduct(data) {
                 `;
 
 
+
         $(".productlist").append(html);
 
 
@@ -234,12 +252,9 @@ function printProduct(data) {
         // }
         // console.log(is_vegan);
 
-
-
-
-
-
     }
+
+
 }
 
 
@@ -274,3 +289,5 @@ function makeStar(rating) {
 
 
 // }
+
+
