@@ -43,10 +43,11 @@ $(document).ready(function () {
     })
 
     //html에 있는 클래스로 인식~~
-    $('.pop_quickshop_zone').hide();
+    // $('.pop_quickshop_zone').hide();
     $('.productlist').on('click','.quickshop p' ,function () {
         $(".pop_quickshop_zone").show();
-        
+        galleryThumbs.update();
+        galleryTop.update();
     });
 
 
@@ -62,13 +63,10 @@ $(document).ready(function () {
         
     });
 
-
-
+    
+    getProductData(1);
 
 });
-
-
-
 
 function getProductData( page ) {
     let url = `http://stage.wishtrend.com/wp-json/wt/v1/products/shop/all?sort=&page=${page}&offset=16`;
@@ -90,61 +88,19 @@ function getProductData( page ) {
 
         printProduct(response.data.products);
 
-        //printPage(response.data.max_page);
+        printPage(response.data.max_page, response.data.page);
+        
+    
+
+        
 
     });
 }
 
-getProductData(1);
+
+//프린트하고,, 붙이기 
 
 
-// function printPage(page) {
-//     $(".pagenav").empty();
-//     let max_page = page;
-//     console.log(max_page);
-
-//     for (let i in page) {
-//         let html = `
-//                 <ul>
-//                     <li><a href="#">${printPage()}</a></li>
-//                 </ul>
-//                 `;
-
-//         $(".pagenav").append(html);
-
-//         let page_html = '';
-
-//         for (let i = 0; i < max_page; i++) {
-//             `<li><a href="#">$</a></li>`
-//         }
-//         console.log(max_page)
-
-//         return `
-//              <ul>
-//                  ${page_html}
-//              </ul>
-//                  `;
-
-//     }
-
-
-// }
-
-// function makePage(paging) {
-
-// }
-
-
-// function printPage(page) {
-//     $(".pagenav").empty();
-
-//     console.log(max_page);
-
-// }
-
-// function makePage(pagelist){
-//     let max_page = page * 1;
-// }
 
 function printProduct(data) {
 
@@ -180,7 +136,7 @@ function printProduct(data) {
                             
                             <div class="info_price">
                                 <h3>
-                                    ${price()}
+                                    ${price(data[i].regular_price, data[i].sale_price)}
                                 </h3>
                             </div>
                         </div>
@@ -200,32 +156,6 @@ function printProduct(data) {
 
         $(".productlist").append(html);
 
-
-        function price() {
-            let regular_price = data[i].regular_price * 1;
-            //console.log(regular_price);
-            let sale_price = data[i].sale_price * 1;
-            //console.log(sale_price);
-            let price_html = '';
-
-            let dc_price = Math.ceil(100 - (sale_price / regular_price * 100));
-            //console.log(dc_price);
-
-            if (regular_price === sale_price) {
-                price_html = `<p>$${regular_price.toFixed(2)}</p>`;
-            } else {
-                price_html = `
-                                    <p>${'$' + data[i].sale_price}</p>
-                                    <del>${'$' + regular_price.toFixed(2)}</del>
-                                    <span class="dc">${dc_price + '%'}</span>`;
-            }
-
-            return `
-                    <h3>
-                    ${price_html}
-                    </h3>
-                    `;
-        }
         //함수를 굳이 안써도 된다 ,, 
         // function price(){
         //     let price_html='';
@@ -254,9 +184,32 @@ function printProduct(data) {
 
     }
 
-
 }
 
+function price(regular_price, sale_price) {
+    regular_price = regular_price * 1;
+    sale_price = sale_price * 1;
+    console.log(regular_price, sale_price);
+    let price_html = '';
+
+    if (regular_price === sale_price) {
+        price_html = `<p>$${regular_price.toFixed(2)}</p>`;
+    } else {
+
+        let dc_price = Math.ceil(100 - (sale_price / regular_price * 100));
+        //console.log(dc_price);
+        price_html = `
+                            <p>${'$' + sale_price.toFixed(2)}</p>
+                            <del>${'$' + regular_price.toFixed(2)}</del>
+                            <span class="dc">${dc_price + '%'}</span>`;
+    }
+
+    return `
+            <h3>
+            ${price_html}
+            </h3>
+            `;
+}
 
 
 function makeStar(rating) {
@@ -266,9 +219,9 @@ function makeStar(rating) {
     let star_html = '';
 
     for (let i = 0; i < 5; i++) {
-        star_html += (i < star_rate) ?
+        star_html = star_html + (i < star_rate ?
             '<span><img src="images/star_rating.png" alt=""></span>' :
-            '<span><img src="images/star_rating_empty.png" alt=""></span>';
+            '<span><img src="images/star_rating_empty.png" alt=""></span>');
     }
 
     return `
@@ -277,7 +230,21 @@ function makeStar(rating) {
             </div>
             `;
 
+}
 
+function printPage(max_page, current_page){
+    console.log(max_page, current_page);
+    $(".pagenav ul").empty();
+
+    // let html = '<ul>';
+
+    for (let i = 1; i <= max_page; i++){
+        let html = `<li class="${(i === current_page ? 'active' : '')}"><a href="javascript:getProductData(${i});">${i}</a></li>`;            
+        $(".pagenav ul").append(html);
+    }
+
+    // html += '</ul>';
+    // $(".pagenav").html(html);
 }
 
 

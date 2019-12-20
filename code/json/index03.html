@@ -20,29 +20,31 @@
 
 
             </div>
+
+            <!-- 팝업 -->
             <div class="pop_quickshop_zone">
                 <div class="pop_quick_area">
                     <div class="pop_bg"></div>
                     <div class="pop_quick_wrap">
                         <div class="inner">
-                        
+                            <!-- 팝업슬라이드 -->
                             <div class="slider_wrap">
-                                <div class="top_slide_area swiper-container">
+                                <div class="top_slide_area swiper-container gallery-top">
                                     <div class="top_slide swiper-wrapper">
                                         <div class="big_img swiper-slide">
                                             <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
                                         </div>
                                         <div class="big_img swiper-slide">
-                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-13.jpg" alt="">
                                         </div>
                                         <div class="big_img swiper-slide">
-                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-17.jpg" alt="">
                                         </div>
                                         <div class="big_img swiper-slide">
-                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-15.jpg" alt="">
                                         </div>
                                         <div class="big_img swiper-slide">
-                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-16.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-button-prev">
@@ -52,10 +54,22 @@
                                     
                                 </div>
         
-                                <div class="bottom_slide_area swiper-container">
+                                <div class="bottom_slide_area swiper-container gallery-thumbs">
                                     <div class="bottom_slide swiper-wrapper">
                                         <div class="small_img swiper-slide">
-                                            <img src="" alt="">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/11/Eclair_LEDmask_product_front.jpg" alt="">
+                                        </div>
+                                        <div class="small_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-13.jpg" alt="">
+                                        </div>
+                                        <div class="small_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-17.jpg" alt="">
+                                        </div>
+                                        <div class="small_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-15.jpg" alt="">
+                                        </div>
+                                        <div class="small_img swiper-slide">
+                                            <img src="https://www.wishtrend.com/wp-content/uploads/2019/07/thumbnail-16.jpg" alt="">
                                         </div>
                                         
                                     </div>
@@ -145,17 +159,9 @@
             </div>
             
 
-
-
-
             <div class="pagenavi_wrap">
                 <div class="pagenav">
-                    
-                    <!-- <ul>
-                        <li><a href="#">&lt;&lt;</a></li>
-                        <li><a href="#">${makePage()}</a></li>
-                        <li><a href="#">&gt;&gt;</a></li>
-                    </ul> -->
+                    <ul></ul>
                 </div>
 
             </div>
@@ -172,13 +178,24 @@
 <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 
 <script>
-    var mySwiper = new Swiper ('.top_slide_area ',{
-        navigation: {
+        
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesVisibility: true,
+            watchSlidesProgress: true,
+        });
+        var galleryTop = new Swiper('.gallery-top', {
+            spaceBetween: 10,
+            navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
-        },
-    });
-
+            },
+            thumbs: {
+            swiper: galleryThumbs
+            }
+        });
 </script>
 <script src="js/index03.js"></script>
 </body>
