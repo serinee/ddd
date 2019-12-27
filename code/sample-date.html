@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // JS DATE Object
+
+        // 컴퓨터의 현재 시간을 가져옴
+        let dt = new Date();
+
+        console.log('Date::', dt);
+
+        // Timestamp -> 리눅스 서버가 시작된 시간 ( 1970-01-01 00:00 (UTC) )으로부터 몇초가 흘렀는지를 알려줌
+        // 자바스크립트에서는 기본적으로 밀리세컨 단위로 나타냄
+        // console.log( 'Timestamp::', dt.getTime() / 1000 );
+        let date_list = {
+            'year': dt.getFullYear(),
+            'month': dt.getMonth() + 1,
+            'date': dt.getDate(),
+            'day': dt.getDay(), // 요일 [Sun, Mon, ... ]
+        };
+
+        console.log(date_list);
+
+        // dt.setDate(/* Timestamp */);
+
+        // YYYY-MM-DD HH:ii:ss
+        let dateString = dt.getFullYear() +'-'+ ( dt.getMonth() + 1 ) +'-'+ dt.getDate() +' '+ dt.getHours() + ':' + dt.getMinutes() +':'+ dt.getSeconds();
+
+        console.log( dateString );
+
+        setInterval(function(){
+            //console.log( dateString);
+        },1000)
+
+        // 시간을 위의방식 or 플러그인 ( Moment를 많이 사용함 )
+
+        
+
+
+
+    </script>
+</body>
+</html>

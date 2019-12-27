@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock</title>
+    <style>
+        #clock{ position: relative; width: 600px; height: 600px; border: 10px solid #000; border-radius: 50%; }
+        #clock::after{ position: absolute; width: 5%; padding-bottom: 5%; left: 50%; top: 50%; transform: translate(-50%, -50%); background-color: #000; content: ""; border: 5px solid #fff; border-radius: 50%; z-index: 10; }
+
+        .clock-pin{ position: absolute; transform-origin: bottom center; border-top-left-radius: 1em; border-top-right-radius: 1em; }
+        #hour{ width: 4%; top: 15%; bottom: 50%; left: 48%; transform: rotate(0); background-color: rgb(102, 232, 208); z-index: 3; }
+        #min{ width: 2%; top: 7%; bottom: 50%; left: 49%; transform: rotate(0); background-color: rgb(218, 83, 83); z-index: 2; }
+        #sec{ width: 1px; top: 3%; bottom: 50%; left: calc(50% - 1px); transform: rotate(0); background-color: rgb(113, 140, 249); z-index: 1; }
+    </style>
+</head>
+<body>
+    
+
+    <div id="clock">
+        <div id="hour" class="clock-pin"></div>
+        <div id="min" class="clock-pin"></div>
+        <div id="sec" class="clock-pin"></div>
+    </div>
+
+    <script>
+        const date = new Date();
+
+        let sec = date.getSeconds();
+        let min = date.getMinutes();
+        let hour = date.getHours();
+
+        if ( hour > 12 ) {
+            hour -= 12;
+        }
+
+        const secondPin = document.getElementById('sec');
+        const minutePin = document.getElementById('min');
+        const hourPin = document.getElementById('hour');
+
+        setInterval(() => {
+            let calcSec = 0;
+            sec += 1;
+
+            if ( sec > 60 ) {
+                min++;
+                sec = 0;
+            }
+
+            calcSec = sec;
+            secondPin.style.transform = `rotate(${calcSec / 60 * 360}deg)`;
+
+            if ( min > 60 ) {
+                hour++;
+                min = 0;
+            }
+
+            calcSec += min * 60;
+            minutePin.style.transform = `rotate(${calcSec / (60 * 60) * 360}deg)`;
+
+            if ( hour > 12 ) {
+                hour = 0;
+            }
+
+            
+
+            calcSec += hour * ( 60 * 60 );
+            hourPin.style.transform = `rotate(${calcSec / (12 * 60 * 60) * 360}deg)`;
+
+        }, 1000);
+    </script>
+
+</body>
+</html>

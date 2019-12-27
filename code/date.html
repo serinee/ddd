@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+   
+    #outline{position: relative; width: 500px; height: 500px; border: 10px solid #000; border-radius: 50%;}
+    #outline::after{position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); content: ''; display: block; width: 40px; height: 40px; background: rgba(0,0,0,0.5); border-radius: 50%;}
+    .pin{position: absolute; bottom: 50%; left: 50%; to p: 0;  transform-origin: bottom center; border-radius: 5px; }
+    #hour{ width: 12px; height: 30%; background: rgb(221, 37, 37); transform: translate(-50%, 0) rotate(0deg);    }
+    #min{ width: 8px; height: 40%; background: rgb(16, 0, 160);   transform: translate(-50%, 0) rotate(0deg);}
+    #sec{width: 5px; height: 46%; background: rgb(110, 3, 160);   transform: translate(-50%, 0) rotate(0deg);  }
+
+    #clock{width: 300px; height: 150px; border: 1px solid #000;}
+</style>
+<body>
+    
+    
+        <div id="outline">
+            <div id="hour" class="pin"></div>
+            <div id="min" class="pin"></div>
+            <div id="sec" class="pin"></div>
+        </div>
+
+        <div id="clock"></div>
+   
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        let date = new Date();
+        console.log(date);
+        //console.log(date);
+
+        // let date_list = {
+        //     'year': date.getFullYear(),
+        //     'month': date.getMonth(),
+        //     'date': date.getDate(),
+        //     'day': date.getDay(),
+        //     'hours': date.getHours(),
+        //     'min': date.getMinutes(),
+        //     'sec':date.getSeconds(),
+        // }
+
+        // console.log(date_list);
+            //setInterval(date,1000)
+
+
+        //function == =>
+
+        let hour = date.getHours();
+        let min = date.getMinutes();
+        let sec = date.getSeconds();
+
+        // if( hour > 12){
+        //     hour = (hour - 12);
+        // }
+
+        const hourPin = document.getElementById('hour');
+        const minPin = document.getElementById('min');
+        const secPin = document.getElementById('sec');
+
+        //console.log(hourPin, minPin, secPin);
+
+        function time(){
+            let clockk = document.getElementById('clock');
+            clockk.innerHTML = `${hour}:${min}:${sec}`;
+        }
+
+        setInterval(time,1000)
+
+        function clock(){
+            let calcSec = 0;
+            sec = sec + 1; 
+
+            if( sec >= 60){
+                min ++;
+                sec = 0;
+            }
+            
+            calcSec = sec;
+
+            //let secDeg = ( sec / 60) * 360;
+            secPin.style.transform = `rotate(${calcSec / 60 * 360}deg)`;
+
+            if( min > 60 ){
+                hour ++;
+                min = 0;
+            }
+
+            calcSec = calcSec + (min * 60);
+            //let minDeg = (min / (60 * 60)  * 360) ;
+            minPin.style.transform = `rotate(${calcSec / (60 * 60) * 360}deg)`;
+
+            calcSec = calcSec + (hour * ( 60 * 60 ));
+            //let hourDeg = ( hour / 12) * 360;
+            hourPin.style.transform = `rotate(${calcSec / (12 * 60 * 60) * 360}deg)`;
+            console.log('dd');
+        };
+
+        
+        setInterval(clock, 1000)
+        console.log(clock);
+        
+
+        // setInterval(function(){
+        //     let calcSec = 0;
+        //     sec = sec + 1; //sec += 1;
+
+        //     if( sec > 60 ){ //
+        //         min++;
+        //         sec = 0;
+        //     }
+
+        //     calcSec = sec;
+        //     secPin.style.transform = `rotate(${calcSec / 60 * 360}deg)`;
+
+        //     if( min > 60 ){
+        //         hour ++;
+        //         min = 0;
+        //     }
+
+        //     calcSec = calcSec + (min * 60);
+        //     minPin.style.transform = `rotate(${calcSec / (60 * 60) * 360}deg)`;
+
+        //     if( hour > 12){
+        //         hour = 0;
+        //     }
+
+        //     calcSec = calcSec + (hour * (60 * 60));
+        //     hourPin.style.transform = `rotate(${calcSec / (12 * 60 * 60) * 360}deg)`;
+        // },1000)
+
+
+    </script>
+
+</body>
+</html>

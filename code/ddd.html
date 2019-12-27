@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log('안녕'+'하세요');
+        var firstname='o';
+        var lastname='laf';
+        console.log(`${firstname}${lastname}`);
+
+        var str = '5';
+        var num = 5;
+        console.log( str == num , str === num);
+
+        var bool = true;
+        var bool2 = false;
+
+        if(bool){console.log('dd')} //실행
+        if(bool2){console.log('ddd')}; //실행 ㄴㄴ
+        
+        if(bool && bool2){console.log('ff')} //&&연산은 모두가 참이어야, bool2=false 실행 ㄴ
+        if(bool || bool2){console.log('fff')} //하나라도 참일 시 실행
+
+        // !는 true, false, !!는 값들 (배열, 객체, string 숫자 등)을 boolean 값으로 변경해줌
+
+        var check = true;
+        console.log("tt"+!check);
+        var string = 'olaf';
+        console.log(!!string);// true , 빈 문자열 ""은 false
+        var empty = '';
+        console.log(!!empty); //false
+        console.log(!empty); //true
+
+        // if(조건){
+        //     //조건 성립 시 실행, 조건 미 성립 시 건너 뜀
+        // }
+        var num = 5;
+        if ( num > 4) {
+            
+            console.log('4보다 크다')
+        }
+
+        // if(조건문){
+        //     //조건 1 실행 영역
+        // }else{
+        //     //조건 1의 조건이 성립하지 않을 경우 실행 될 영역
+        // }
+
+        var num = 3;
+        if( num > 4){
+            console.log('4보다 크다')
+        }else{
+            console.log('4보다 작다')
+        }
+
+        var num3 = 4;
+        if( num3 > 10){
+            console.log('10보다 크다')
+        }else if( 5 < num3){
+            console.log('5보다 크다')
+        }else{
+            console.log('5보다 작다')
+        }
+
+        //switch
+
+        //switch 문은 조건에 맞는 case 영역을 실행한다.
+
+        // switch(조건){
+        //     case 조건 1: //조건1실행
+        //     case 조건 2: //조건2실행
+        //     case 조건 3: //조건3실행
+        //     default: // 조건에 부합하는 case가 없다면 디폴트 실행
+        // }
+
+        var status ='아침';
+        switch(status){
+            case '아침':
+                console.log('커피');
+            case '점심':
+                console.log('점심 먹는다');
+            case '저녁':
+                console.log('퇴근한다');
+                default: '하이';
+        }
+
+
+    </script>
+</body>
+</html>
