@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>폼 유효성 검사</title>
+</head>
+<body>
+    <form id="fmField" name="fmField" action="" method="post" onsubmit="return checkForm();">
+        <div class="form">
+            <table class="ftb">
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="userId" id="userId"></td>
+                </tr>
+                <tr>
+                    <td>암호</td>
+                    <td><input type="text" name="userPw" id="userPw"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="로그인">
+                        <!-- button일 경우는
+                        <input type="button" onclick="checkForm"></button> -->
+                        <input type="reset" value="취소">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+
+    <script>
+        function checkForm(){
+            var userId = document.fmField.userId;
+            // 아이디 입력 유무 체크
+            if(userId.value == '' || !(userId.value.length >= 3 && userId.value.length <= 12)){
+                window.alert('아이디를 입력하세요');
+                document.fmField.userId.focus();
+                document.getElementById('userId').select();
+                return false; // 아이디 입력이 안되어 있다면 submit 이벤트를 중지
+            }
+            var userPw = document.getElementById('userPw');
+            //암호 입력 유무 체크
+            if(document.fmField.userPw.value == ''){
+                alert('암호를 입력하세요');
+                userPw.focus();
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

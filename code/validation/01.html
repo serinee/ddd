@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>유효성검사</title>
+</head>
+<body>
+    <form action="" name="from">
+        <input type="text" name="input1">
+        <input type="text" name="input2">
+        <input type="text" name="input3">
+        <!-- <button type="button" value="check" onclick="check_onclick()">버튼</button> -->
+        <input type="button" value="check" onclick="check_onclick()">
+    </form>
+
+    <script>
+        function check_onclick(){
+            theForm=document.form;
+            if(theForm.input1.value==""||theForm.input2.value==""||theForm.input3.value||""){
+                if(theForm.input1.value==""){
+                    alert('필수 입력란 1이 비어 있습니다. 확인해주세요.')
+                    return theForm.input1.focus();
+                }else if(theForm.input2.value==""){
+                    alert('필수 입력란 2이 비어 있습니다. 확인해주세요.')
+                    return theForm.input2.focus();
+                }else{
+                    alert('필수 입력란 3이 비어 있습니다. 확인해주세요.')
+                    return theForm.input3.focus();
+                }
+            }
+            else{
+                alert('필수 입력란을 모두 입력하셨습니다.');
+            }
+        }
+    </script>
+</body>
+</html>
