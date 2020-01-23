@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    .tvc_popup_wrap{
+        width: 720px;
+        height: 568px;
+    }
+    .tvc_popup_wrap .video_wrap{
+        width: 100%;
+        height: 402px;
+    }
+    .tvc_popup_wrap .video_wrap .iframe_area{
+        width: 100%;
+        height: 100%;
+        background: yellow;
+    }
+    .tvc_popup_wrap .video_wrap .top_caption_area{
+
+    }
+    .tvc_popup_wrap .ad_wrap{
+        width: 100%;
+        height: 165px;
+        padding: 20px;
+    }
+    .tvc_popup_wrap .ad_wrap .left_img_area{}
+    .tvc_popup_wrap .ad_wrap .left_img_area .new_circle{}
+    .tvc_popup_wrap .ad_wrap .left_img_area .bg_pizza_img{
+        width: 100%;
+        padding-bottom: 133px;
+        background: url(images/img_pizza.png) 0 0 no-repeat;
+    } 
+    .tvc_popup_wrap .ad_wrap .center_caption_area{}
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_img{}
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_img img{}
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_price{}
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_price div{
+        width: 46px;
+        padding: 5px 10px;
+        background: #f3b823;
+        border-radius: 20px;
+        color: #492b21;
+        font-size: 13px;
+        line-height: 50px;
+
+    }
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_price p{
+        font-size: 16px;
+        line-height: 50px;
+    }
+    .tvc_popup_wrap .ad_wrap .center_caption_area .text_price p strong{
+        color: #f3b823;
+    }
+    .tvc_popup_wrap .ad_wrap .right_btn_area{}
+    .tvc_popup_wrap .ad_wrap .right_btn_area ul{}
+    .tvc_popup_wrap .ad_wrap .right_btn_area ul li{}
+    .tvc_popup_wrap .ad_wrap .right_btn_area ul li a{
+        display: block;
+        
+    }
+</style>
+<body>
+    <div class="tvc_popup_wrap">
+        <div class="video_wrap">
+            <div class="iframe_area"></div>
+            <div class="top_caption_area">
+                <img src="images/caption.png" alt="">
+            </div>
+        </div>
+        <div class="ad_wrap">
+            <div class="left_img_area">
+                <div class="new_circle">NEW</div>
+                <div class="bg_pizza_img"></div>
+            </div>
+            <div class="center_caption_area">
+                <div class="text_img"><img src="images/caption_02.png" alt=""></div>
+                <div class="text_price">
+                    <div>포장</div><p><strong>L</strong>21,540원&nbsp;<strong>M</strong>17,940원</p>
+                    <div>배달</div><p><strong>M</strong>21,540원&nbsp;<strong>M</strong>17,940원</p>
+                </div>
+            </div>
+            <div class="right_btn_area">
+                <ul>
+                    <li class="order"><a href="#">주문하기</a></li>
+                    <li class="close"><a href="#">닫기</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

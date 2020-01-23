@@ -13,7 +13,7 @@
     .modal{width: 500px; height: 300px; background: orange;}
 </style>
 <body>
-    <!-- <div class="popup_wrap">
+    <div class="popup_wrap">
         <div></div>
         <a href="javascript:;">오늘하루열지않음</a>
     </div>
@@ -28,6 +28,8 @@
         });
 
         function setCookie(name, value, expiredays){
+            var todayDate = new Date();
+            todayDate.setDate( todayDate.getDate() + expiredays );
             document.cookie=name + '=' + escape(value) + '; path=/; expires=' + todayDate.toGMTString() + ';'
         }
         function getCookie(){
@@ -40,8 +42,9 @@
         }
         getCookie();
 
-    </script> -->
-    <div class="modal">
+    </script>
+
+    <!-- <div class="modal">
         <a href="javascript:;" class="btn_close">오늘하루열지않음</a>
     </div>
 
@@ -69,6 +72,6 @@
         }
     }
     getCookieMobile();
-</script>
+</script> -->
 </body>
 </html>

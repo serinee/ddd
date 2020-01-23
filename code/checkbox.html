@@ -1,0 +1,87 @@
+//전체동의
+  $('.agree #chk_all').on('click',function(){
+    if($('.agree #chk_all').prop('checked')){
+      $('.agree input[type=checkbox]').prop('checked',true);
+      $('.checkbox_popup .pop_check input[type=checkbox]').prop('checked',true);
+    }else{
+      $('.agree input[type=checkbox]').prop('checked',false);
+      $('.checkbox_popup .pop_check input[type=checkbox]').prop('checked',false);
+    }
+  })
+
+  //console.log(chkboxLen);
+  //인풋 해제 시 전체동의 해제
+  $('.agree input').on('click',function(){
+    // var chkboxLen = $('.agree input[type=checkbox]').not('#chk_all').length; //전체 동의 input 1개 빼기  
+    // var chkedLen = $('.agree input[type=checkbox]:checked').length;
+    // console.log(chkedLen);
+
+    //input 클릭 시 팝업 열기
+    $('.checkbox_popup').css('display','flex');
+    
+    // $('.pop_check li input[type=checkbox]').prop('checked',false);
+    // console.log('ddd');
+    
+
+    // if($(this).prop('checked')){
+    //   $('.agree .check_slct input[type=checkbox]').prop('checked',true);
+    //   $('.checkbox_popup .pop_check input[type=checkbox]').prop('checked', true);
+      
+    //   if( chkboxLen === chkedLen){
+    //     $('.agree .agree_all input[type=checkbox]').prop('checked',true);
+    //   }
+    // }else{
+    //   $('.agree .check_slct input[type=checkbox]').prop('checked',false);
+    //   $('.agree #chk_all').prop('checked',false);
+    // }
+  });
+
+  //팝업 li 항목 클릭시 active
+  $('.checkbox_popup .pop_check li').on('click',function(){
+    $('.checkbox_popup .pop_check li').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  //팝업 X 버튼 누르면 팝업 닫기
+  $('.checkbox_popup .popup_title .close').on('click',function(){
+    $('.checkbox_popup').hide();
+  });
+
+  //팝업 체크 박스 상태 변경 시
+  $('.checkbox_popup .pop_check input[type=checkbox]').on('change',function(){
+    var status = $(this).prop('checked');
+    var indexNo = $(this).parent('li').index();
+    var popChk = $('.pop_check input[type=checkbox]').length; //전체 동의 input 1개 빼기  
+    var popChked = $('.pop_check input[type=checkbox]:checked').length;
+    //팝업 체크 화면 체크 연동
+    $('.agree li').eq( indexNo + 1 ).find('input[type=checkbox]').prop('checked', status);
+
+    //팝업 체크 전체 동의 연동
+    if( popChk === popChked){
+      $('.agree #chk_all').prop('checked',true)
+    }else{
+      $('.agree #chk_all').prop('checked',false);
+    }
+    // console.log($(this).parent('li').index(), $(this).prop('checked'));
+    
+  });
+  
+  //본문 체크 박스 상태 변경 시
+  $('.agree input[type=checkbox]').on('change',function(){
+    var status = $(this).prop('checked');
+    var indexNo = $(this).parent('li').index();
+    $('.checkbox_popup .pop_check li').eq(indexNo - 1).find('input[type=checkbox]').prop('checked',status);
+    console.log('dddd')
+  });
+
+  //쿠폰 클릭 시
+  $('.btn_coupon_wrap button').on('click',function(){
+    var allChklen = $('input[type=checkbox]:checked').length;
+    console.log(allChklen)
+    if(allChklen < 5){
+      alert('전체 동의하시는 경우에만 아이코스 대여 관련 안내 내용 수신 및 특별 구매 할인 쿠폰 코드 발급이 가능합니다.');
+    }  
+  })
+  
+  
+});

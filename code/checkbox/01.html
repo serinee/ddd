@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>체크박스 동기화</title>
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <div class="form_promo_wrap">
+        <div class="form_promo_box">
+            <form action="#" method="">
+                <div class="form_promo">
+                    <input class="input_username" type="text" id="prm_username"
+                        placeholder="성명">
+                    <label for="prm_username" class="prm_lbl_name"></label>
+                </div>
+                <div class="form_promo">
+                    <input class="input_phone" type="text" id="prm_tel" placeholder="연락처">
+                    <label for="prm_tel" class="prm_lbl_tel"></label>
+                </div>
+                <div class="checkbox_wrap checkbox_adult">
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="chk_adult">
+                            <label for="chk_adult" class="chk_lbl">본인은 만 20세 이상 성인입니다.</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="checkbox_wrap">
+                    <ul class="agree">
+                        <li class="agree_all">
+                            <input type="checkbox" id="chk_all">
+                            <label for="chk_all" class="chk_lbl check_all">전체 동의</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="chk_01">
+                            <label for="chk_01" class="chk_lbl check_slct">[필수] 개인정보 수집 이용에 대한
+                                동의</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="chk_02">
+                            <label for="chk_02" class="chk_lbl check_slct">[선택] 개인정보 처리업무 위탁에 대한
+                                동의</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="chk_03">
+                            <label for="chk_03" class="chk_lbl check_slct">[선택] 영리목적 광고성 정보 수신
+                                동의</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn_coupon_wrap">
+                    <button type="submit">특별 구매 할인 쿠폰 받기<span><img
+                                src="../images/promotion/arrow_right_white.png"
+                                alt=""></span></button>
+                </div>
+            </form>
+        </div>
+    </div> 
+    
+    <div class="checkbox_popup">
+        <div class="checkbox_popup_inner">
+            <div class="popup_title">
+                <div class="title_wrap">
+                    <p>안내</p>
+                    <div class="close"></div>
+                </div>
+
+            </div>
+
+            <div class="contents">
+                <ul class="pop_check">
+                    <li>
+                        <input type="checkbox" id="pop_01">
+                        <label for="pop_01" class="chk_lbl check_slct">[필수] 개인정보 수집 이용에 대한 동의</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="pop_02">
+                        <label for="pop_02" class="chk_lbl check_slct">[선택] 개인정보 처리업무 위탁에 대한 동의</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="pop_03">
+                        <label for="pop_03" class="chk_lbl check_slct">[선택] 영리목적 광고성 정보 수신 동의</label>
+                    </li>
+                </ul>
+                <div class="caption_wrap">
+                    <div class="caption">
+                        <p>
+                            1. [필수] 개인정보 수집 이용에 대한 동의<br>
+                            한국필립모리스㈜는 「개인정보보호법」, 「정보통신망 이용촉진 및 정보 보호 등에 관한 법률」에 따라 귀하의 개인정보를 다음과 같이 수집·이용하고자
+                            합니다.<br>
+                            - 개인정보의 수집∙이용 목적: 본인확인 및 성인인증, 아이코스 대여 프로그램 소개 및 상담, 특별 구매 할인 쿠폰 발급<br>
+                            - 수집·이용하는 개인정보의 내용: 성명, 전화번호<br>
+                            - 개인정보 보유·이용 기간: 본 프로그램 소개를 위한 연락 시까지, 수집시로부터 최대 6개월<br>
+                            *본 동의를 거부하실 수 있으나, 거부하는 경우에는 아이코스 대여 프로그램 소개, 신청 상담 서비스 제공 및 특별 구매 할인 쿠폰 발급이 제한될 수 있습니다.
+
+                        </p>
+                    </div>
+                    <div class="caption">
+                        <p>
+                            2. [선택] 개인정보 처리업무 위탁에 대한 동의<br>
+                            한국필립모리스㈜는 「개인정보보호법」, 「정보통신망 이용촉진 및 정보 보호 등에 관한 법률」에 따라 귀하의 개인정보를 다음과 같이 처리위탁하고자 합니다.<br>
+                            - 개인정보 수탁자: 트랜스코스모스코리아㈜<br>
+                            - 개인정보 위탁목적: 설문조사 및 당사가 제공하는 프로그램 소개 및 상담<br>
+                            - 위탁할 개인정보의 내용: 성명, 전화번호<br>
+                            - 위탁기간: 6개월<br>
+                        </p>
+                    </div>
+                    <div class="caption">
+                        <p>
+                            3. [선택] 영리목적 광고성 정보 수신 동의<br>
+                            - 아이코스 관련 정보 및 프로모션 안내 연락방법: 전화, 문자, 카카오톡
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+    
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        
+        //본문 전체 동의
+        $('.agree #chk_all').on('click',function(){ //#chk_all을 클릭 했을 때
+            if($('.agree #chk_all').prop('checked')){ // 만약 #chk_all의 상태가 'checked' 라면
+                $('.agree input[type=checkbox').prop('checked',true); //.agree 안에 있는 input[type=checkbox] 의 상태를 checked,true로 바꾼다
+                $('.checkbox_popup .pop_check input[type=checkbox]').prop('checked',true); //.pop_check의 input[type=checkbox]의 상태도 checked, true 로.
+            }else{ //상태가 'checked'가 아니라면
+                $('.agree input[type=checkbox]').prop('checked',false); //.agree 안의 인풋 체크박스의 상태를 false로
+                $('.checkbox_popup .pop_check input[type=checkbox]').prop('checked',false); // .pop_check의 input 체크박스도 false로 바꾼다.
+            }
+        });
+
+        //팝업 체크 박스 상태 변경 시
+        $('.checkbox_popup .pop_check input[type-checkbox]').on('change',function(){
+            var status = $(this).prop('checked');
+            var indexNo = $(this).parent('li').index();
+
+            //팝업 체크와 본문 체크 연동
+            $('.agree li').eq( indexNo + 1 ).find('input[type=checkbox').prop('checked',status);
+        })
+    </script>
+</body>
+</html>
