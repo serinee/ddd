@@ -7,15 +7,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+
+    <h1 id="title">Hi From JS</h1>
     <script>
-        myname="global";
-        function func(){
-            alert(myname);
-            var myname="local";
-            alert(myname);
-        }
-        func();
-        </script>
+        const title = document.getElementById('title');
+        console.log(title);
+    </script>
 </body>
-</html>
+</html>`

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="title">Hi From JS</h1>
+    <script>
+        // const title = document.getElementById('title');
+        const title = document.querySelector('#title');
+        title.innerHTML = 'Hi! From JS';
+        title.style.color = 'red';
+        console.log(title);
+        console.dir(title);
+        document.title = 'i own you now'
+        title.innerHTML = 'hi'
+
+
+    </script>
+</body>
+</html>

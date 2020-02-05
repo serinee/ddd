@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        
+
+        function sayHello(name, age){
+            console.log(`1. hello ${name} you are ${age} years old`);
+        }
+        const greetSerin = sayHello('Serin', 26)
+        console.log(greetSerin) // 반환이 안됐음 function sayHello에서 그래서 undefined
+
+        
+        function say(name, age){
+            console.log(`2. hello ${name} you are ${age} years old`);
+            return `2. hello ${name} you are ${age} years old`;    
+        }
+        const greet = say('Serin', 26)
+
+        console.log(greet) // return 으로 값을 반환했음 
+    </script>
+</body>
+</html>

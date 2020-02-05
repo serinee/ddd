@@ -7,15 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    
     <script>
-        myname="global";
-        function func(){
-            alert(myname);
-            var myname="local";
-            alert(myname);
+        const calculator = {
+            plus: function( a, b){
+                return a + b;
+            }
         }
-        func();
-        </script>
+
+        const plus = calculator.plus(5,5);
+        console.log(plus)
+    </script>
 </body>
 </html>
