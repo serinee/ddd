@@ -6,29 +6,54 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    body{
+        background: #ecf0f1;
+    }
+    h1{
+      
+    }
+</style>
 <body>
 
     <h1 id="title">Hi From JS</h1>
     <script>
       const title = document.querySelector('#title');
-      const BASE_COLOR = 'rgb(52,73,94)';
-      const OTHER_COLOR = 'blue'
+      const BASE_COLOR = 'rgb(52, 73, 94)';
+      const OTHER_COLOR = "#7f8c8d";
 
       function handleClick(){
           const currentColor = title.style.color;
-          if(currentColor === BASE_COLOR){
+          console.log(currentColor); // 작동하는지 체크
+          if ( currentColor === BASE_COLOR){
               title.style.color = OTHER_COLOR;
-          }else{
+          } else{
               title.style.color = BASE_COLOR;
           }
+
+          
       }
 
       function init(){
             title.style.color = BASE_COLOR;
             title.addEventListener('click', handleClick);
           
-      }
+      }  
       init();
+
+      function handleOffline(){
+          console.log('lalala');
+      }
+
+      function handleOnline(){
+          console.log('welcome')
+      }
+
+
+    //   navigator.addEventListener('offline', handleOffline); //함수가아니다
+      window.addEventListener('offline', handleOffline);
+      window.addEventListener('online',handleOnline); // online, offline 와이파이 상태를 파악
+
         
 
     </script>

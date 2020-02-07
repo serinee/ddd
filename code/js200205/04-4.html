@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: #ecf0f1;
+    }
+    h1{
+      color: #34495e;
+      transition: color 0.5s ease-in-out;
+    }
+    .clicked{
+        color: #7f8c8d;
+    }
+
+    .btn{
+        cursor: pointer;
+    }
+
+</style>
+<body>
+
+    <h1 id="title" class="btn">Hi From JS</h1>
+
+
+    <script>
+        
+        const title = document.querySelector('#title');
+
+        const clicked_class = 'clicked';
+
+        function handleClick(){
+            const currentClass = title.className;
+            console.log(currentClass);
+            if(currentClass !== clicked_class){
+                title.className = clicked_class;
+            }else{
+                title.className = '';
+            }
+        }
+
+        function init(){
+            title.addEventListener('click',handleClick);
+        }
+        init();
+    </script>
+</body>
+</html>
