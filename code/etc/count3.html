@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+<style>
+    
+    .countdown{
+        position: relative;
+        width: 43%;
+        height: 90px;
+    }  
+    .count_wrap{display: flex; width: 100%;
+    height: 100%;}
+    .count_bg{
+        fl oat: left;
+        width: 10%;
+        height: 100%;
+        margin: 7px;
+        background: #000;
+        color: #fff;
+        border-radius: 10px;
+        text-align: center;
+        font-size: 66px;
+    }
+    .semi{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .semi div{
+        width: 15px;
+        height:  15px;
+        margin: 10px;
+        background: #000000;
+        border-radius: 50%;
+    }
+    .hour2,
+    .minute2{
+        mar gin-right: 30px;
+    }
+    #countExpire{
+        margin-top: 10px;
+    }
+    #countExpire div{
+        position: absolute;
+    font-size: #fff;
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bold;
+    letter-spacing: 45px;
+    line-height: 100%;
+    
+    top: 10%;
+    }
+    #countExpire .hour{
+        left: 1.1%;
+    }
+    #countExpire .minute{
+        left: 37.5%;
+    }
+    #countExpire .second{
+        left: 73.5%;
+    }
+
+    .nav{width: 34%; margin-top: 50px;}
+    .nav .base{ 
+        position: relative;
+        width: 100%;
+        height: 5px;
+        background:gray;
+        left: 0;
+        top: 0;
+    }
+    .bar{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 5px;
+        background: blue;
+    }
+    .nav .base .circle{
+        width: 10px;
+        height: 10px;
+        background: #fff;
+        border: 3px solid blue;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+</style>
+<body>
+    <div class="countdown">
+        <div class="count_wrap">
+            <div class="count_bg hour1"></div>
+            <div class="count_bg hour2"></div>
+            <div class="semi">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="count_bg minute1"></div>
+            <div class="count_bg minute2"></div>
+            <div class="semi">
+                <div></div>
+                <div></div>
+            </div>
+            <div class="count_bg second1"></div>
+            <div class="count_bg second2"></div>
+        </div>
+        <div id="countExpire">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="base">
+            <div class="wrap">
+                <div class="bar"></div>
+                <div class="circle"></div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+var Dday = new Date("2 14, 2020 19:50:00").getTime(); //디데이 종료 일자 설정
+    
+
+    function timer_set(){ 
+        
+        var now = new Date().getTime(); //현재
+        var distance = Dday - now;// 종료일자에서 현재일자를 뺀 시간
+        // 각 변수에 일, 시, 분, 초를 등록
+        //var d = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+        var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var s = Math.floor((distance % (1000 * 60)) / 1000);
+        //id가 d-day인 HTML코드에 내용 삽입
+        //document.getElementById("countExpire").innerHTML = d;
+        //document.querySelector("#countExpire").innerText = `${ h < 10 ? `0${h}` : h } ${ m < 10 ? `0${m}` : m } ${ s < 10 ? `0${s}` : s}`;
+            //h + ":" + m + ":" + s;
+        // document.querySelector('.hour').innerText = ` ${ h < 10 ? `0${h}` : h } `;
+        // document.querySelector('.minute').innerText = ` ${ m < 10 ? `0${m}` : m } `;
+        // document.querySelector('.second').innerText = ` ${ s < 10 ? `0${s}` : s} `;
+        var time = `${ h < 10 ? `0${h}` : h } ${ m < 10 ? `0${m}` : m } ${ s < 10 ? `0${s}` : s}`;
+        //console.log(time);
+        var substr = time.substr(0,1);
+        var substr1 = time.substr(1,1);
+        var substr2 = time.substr(2,1);
+        var substr3 = time.substr(3,1);
+        var substr4 = time.substr(4,1);
+        var substr5 = time.substr(5,1);
+        var substr6 = time.substr(6,1);
+        var substr7 = time.substr(7,1);
+        console.log(substr,substr1,substr2,substr3,substr4,substr5,substr6,substr7)
+        document.querySelector('.hour1').innerText = substr;
+        document.querySelector('.hour2').innerText = substr1;
+        document.querySelector('.minute1').innerText = substr3;
+        document.querySelector('.minute2').innerText = substr4;
+        document.querySelector('.second1').innerText = substr6;
+        document.querySelector('.second2').innerText = substr7;
+    
+    // var x = setInterval(function() {
+    //     // 오늘 날짜 등록
+        
+    };
+
+    function timeNav(){
+       
+        var now = new Date().getTime(); //현재
+        var distance = Dday - now;// 종료일자에서 현재일자를 뺀 시간
+                var calcSec = 0;
+               
+                var second = 0;
+            
+            var distance = Dday - now; // 종료일자에서 현재일자를 뺀 시간
+                var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var s = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                calcSec = 100 - (h  * 4.1);
+                //calcSec += h * ( 100 - 4.166);
+                second =  100 - (s* 1.666);
+                //second = s
+
+                //document.querySelector('.circle').style.left = calcSec + '%';
+                //document.querySelector('.circle').style.left = second + '%';
+                console.log(calcSec + 'h');
+                console.log(second + 'sec');
+                console.log(h);
+                $('.circle').animate({left:calcSec + '%'},500);
+                $('.bar').animate({width:calcSec + '%'},500);
+
+                //$('.circle').animate({left:calcSec + '%'},500);
+                //$('.circle').animate({left:second + '%'},1000);
+                //console.log($('.circle').animate({left:second + '%'},500))
+        };
+    
+    
+    setInterval(timer_set , 1000); //1초마다 갱신되도록 함수 생성,실행
+    //timeNav();
+    setInterval(timeNav, 1000);
+        
+
+        
+
+
+    </script>
+</body>
+</html>
