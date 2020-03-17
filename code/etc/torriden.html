@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+        $('#gnb > li').hide();
+
+        $('#gnb > li').on('hover',function(){
+            $('#gnb li ul li').show();
+        });
+
+
+    });
+
+    http://seri002.www254.freesell.co.kr/board/board.html?code=seri002_image1&page=1&board_cate=
+
+    html
+    <!-- 원본 -->
+                                    <!--/loop_list/-->
+                                    <li>
+                                        <a href="<!--/list@link/-->">
+                                        <!--/if_list@attach_image/-->
+                                            <span><img src="<!--/list@attach_image/-->"/></span>
+                                        <!--/else/-->
+                                            <span class="noimg">no image</span>
+                                        <!--/end_if/-->
+                                            <strong><!--/list@subject/--><!--/if_list@comment_cnt/-->(<!--/list@comment_cnt/-->)<!--/end_if/--> 
+                                            <!--/if_list@new_icon_image/--><img src="<!--/list@new_icon_image/-->"/><!--/end_if/-->
+                                            </strong>
+                                        </a>
+                                        <p><!--/if_list@img_admin_icon/--><img src = "<!--/list@img_admin_icon/-->" /><!--/else/-->
+                                        <!--/if_list@user_icon_image/--><img src="<!--/list@user_icon_image/-->"/><!--/end_if/--><!--/list@writer/--><!--/end_if/--></p>
+                                        <p><!--/date(%Y/%M/%D %H:%i)/list@date_write/--></p>
+                                        <p>조회 : <!--/list@cnt_read/--></p>
+                                    </li>
+                                    <!--/if_step(3)/-->
+                                    </ul>
+                                    <ul class="clear">
+                                    <!--/end_if/-->
+                                    <!--/end_loop/-->
+        
+    </script>
+</body>
+</html>

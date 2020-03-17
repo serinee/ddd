@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #countdown,
+
+    #HourCountdown,
+
+    #countExpire {
+
+       
+
+        color: blue;
+
+        font-weight: bold;
+
+    }
+
+</style>
+<body>
+    <div id="countdown"></div>
+
+    <div id="HourCountdown"></div>
+
+    <div id="countExpire"></div>
+
+    <script>
+
+        
+ CountDownTimer('02/14/2020', 'countdown');
+
+CountDownTimer('2/13/2020 01:00 PM', 'HourCountdown');
+
+CountDownTimer('2/14/2020', 'countExpire');
+
+function CountDownTimer(dt, id) {
+
+    var end = new Date(dt);
+
+    var _second = 1000;
+
+    var _minute = _second * 60;
+
+    var _hour = _minute * 60;
+
+    var _day = _hour * 24;
+
+    var timer;
+
+
+
+    function showRemaining() {
+
+        var now = new Date();
+
+        var distance = end - now;
+
+       console.log(timer);
+
+
+
+        // 시간 종료 시 뜨는 문구
+
+        if (distance < 0) {
+
+            clearInterval(timer);
+
+            document.getElementById(id).innerHTML = '카운트다운이 끝났습니다. 곧 오픈합니다!';
+
+            return;
+
+        }
+
+        var days = Math.floor(distance / _day);
+
+        var hours = Math.floor((distance % _day) / _hour);
+
+        var minutes = Math.floor((distance % _hour) / _minute);
+
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        if( seconds < 10 ){
+            seconds = "0" + seconds;
+        }
+
+        // if( minutes < 10 ){
+        //     minutes = "0" + minutes;
+        // } 
+
+        // if( hours < 10 ){
+        //     hours = "0" + minutes;
+        // }
+
+        document.getElementById(id).innerHTML = days + '일 ';
+
+        document.getElementById(id).innerHTML += hours + '시간 ';
+
+        document.getElementById(id).innerHTML += minutes + '분 ';
+
+        document.getElementById(id).innerHTML += seconds + '초';
+
+    }
+
+    timer = setInterval(showRemaining, 1000);
+
+}
+    </script>
+</body>
+</html>

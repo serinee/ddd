@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="index.css">
 </head>
-
+<style>
+    #section02{height:0;}
+</style>
 <body>
     <header id="header">
         <div class="header-inner">
@@ -41,6 +43,19 @@
                 </ul>
             </div>
         </div>
+        <script src="../js/jquery-3.4.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                //$('.header-inner').show();
+                $('#section02').hide();
+                $('#section02').slideDown(500);
+                
+                $('.header-inner').hide();
+                $('.header-inner').slideDown(500);
+                
+            })
+            
+        </script>
     </header>
     <main id="main">
         <section id="section01">

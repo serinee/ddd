@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="이름">
+    <input type="text" id="phone" placeholder="연락처">
+    <input type="checkbox" id="chck01"><label for="chck01">체크1</label>
+    <button type="submit">확인</button>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        //쿠폰 클릭 시 얼럿
+        $('button').on('click',function(){
+            var customerName = $('#name').val();
+            var customerPhonenumber = $('#phone').val();
+            console.log(customerName, customerPhonenumber);
+            
+            //성명 미 입력시 
+            if(customerName == ''){
+                alert('성명 입력 후 진행 부탁드립니다.');
+                return false;
+            }
+            // 연락처 미 입력시
+            if(customerPhonenumber == ''){
+                alert('연락처 입력 후 진행 부탁드립니다.');
+                return false;
+            }
+            //체크 미체크 시
+            if(!$('#chck01').is(':checked')){
+                alert('필수 항목은 반드시 동의해야 진행 가능합니다.');
+                return false;
+            }
+        })
+
+        //전화번호 유효성 체크
+        $('#phone').on('keyup',function(e){
+            var trans_num = $(this).val().replace(/^[0-9]{10,11}/g,'');
+            console.log(trans_num);
+            $(this).val(trans_num);
+        });
+        // $('#phone').on('keydown',function(e){
+        //     //숫자만 입력 받기
+        //     var trans_num = $(this).val().replace(/^[0-9]/g,'');
+        //     // var k = e.keyCode;
+        //     // if(trans_num.length >= 11 && ((k >= 48 && k <=126) || (k >=12592 && k <= 12687 || k == 32 || k ==229 || ( k>=45032 && k <= 55203)) )){
+        //     //     e.preventDefault();
+        //     //}
+        // }).on('blur',function(){ //포커스를 잃었을 때 실행
+        //     if($(this).val() == '') return;
+
+        //     //기존 번호에서 -를 삭제
+        //     var trans_num = $(this).val().replace(/-/gi,'');
+
+        //     //입력 값이 있을 때만 실행
+        //     if(trans_num != null && trans_num != ''){
+        //         //총 핸드폰 자리 수는 11글자이거나, 10자여야 합니다.
+        //         if(trans_num.length == 11 || trans_num.length == 10){
+        //             //유효성 체크
+        //             var regExp_ctn = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;
+        //             if(regExp_ctn.test(trans_num)){
+        //                 //유효성 체크에 성공하면 값을 바꿔줍니다.
+        //                 trans_num = trans_num.replace(/^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})-?([0-9]{3,4})-?([0-9]{4})$/, "$1$2$3");
+        //                 $(this).val(trans_num);
+        //             }else{
+        //                 alert('유효하지 않은 전화번호 입니다.');
+        //                 $(this).val('');
+        //                 $(this).focus();
+        //             }
+        //         }else{
+        //             alert('유효하지 않은 전화번호 입니다.');
+        //             $(this).val('');
+        //             $(this).focus();
+        //         }
+        //     }
+        // });
+    </script>
+</body>
+</html>

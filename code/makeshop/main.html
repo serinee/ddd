@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.con_inner{ width: 1280px; margin: 0 auto;}
+.visual{
+    width:100%;
+   
+}
+.visual .visual_bg{
+    display: block;
+    height: 1023px;
+    background: url('http://seri002.img9.kr/main_banner_01.jpg') center no-repeat;
+    background-size: cover;
+    
+}
+.visual .visual_bg .con_inner{
+    width: 1280px;
+    margin: 0 auto;
+}
+.visual .visual_bg .text_wrap{}
+.visual .visual_bg .text_wrap p{
+    font-family: "IvyMode";
+    font-size: 40px;
+    line-height: 60px;
+}
+.visual .visual_bg .text_wrap strong{
+    font-size: 26px;
+    line-height: 36px;
+    font-weight: Medium;
+}
+.visual .visual_bg .text_wrap span{
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.main_banner{}
+.main_banner .text_wrap p{
+    font-size: 20px;
+    line-height: 36px;
+}
+.main_banner .text_wrap p strong{
+    font-size: 26px;
+    font-weight: medium;
+    line-height: 30px;
+}
+.main_banner .btn_more{
+    display: block;
+    width: 268px;
+    height: 48px;
+    border: 0.5px solid #000;
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+}
+.main_banner .img_wrap{}
+.banner_01{
+    height: 602px;
+    background: url('http://seri002.img9.kr/main_banner_02.jpg') 0 90% no-repeat;
+    background-size: cover;
+}
+.banner_01 .text_wrap{
+    padding-top: 94px;
+}
+.banner_01 .text_wrap p{}
+.banner_01 .text_wrap p strong{}
+
+.main_slider{
+    height: 489px;
+}
+.main_slider .con_inner{}
+.main_slider .main_slider_wrap{}
+.main_slider .main_slider_wrap .slider{
+    background: #FAEFE2;
+}
+.main_slider .main_slider_wrap .slider .bg_img{}
+.main_slider .main_slider_wrap .slider .text_wrap{}
+.main_slider .main_slider_wrap .slider .text_wrap p{
+    font-size: 20px;
+    line-height: 30px;
+}
+.main_slider .main_slider_wrap .slider .text_wrap p strong{
+    font-size: 26px;
+    font-weight: medium;
+    line-height: 36px;
+}
+
+.banner_02{
+    height: 682px;
+}
+
+.ft_inner{}
+.ft_inner .ft_info{}
+.ft_inner .ft_info dl{}
+.ft_inner .ft_info dl dt{
+    color: #9F9F9F;
+    font-size: 16px;
+    line-height: 30px;
+    
+}
+.ft_inner .ft_info dl dd{
+    color: #9F9F9F;
+    font-size: 16px;
+    line-height: 30px;
+}
+.ft_inner .copyright{}
+.ft_inner .copyright p{
+    color: #9F9F9F;
+    font-size: 16px;
+    line-height: 30px;
+}
+.ft_inner .copyright .logo{}
+.ft_inner .copyright .logo img{}
+
+#header{
+    width: 100%;
+    height: 100%;
+    
+
+}
+#header .hd_inner{
+    height: 56px;
+    display: flex;
+    background: skyblue;
+    transition: 0.5s;
+
+}
+#header .hd_inner .logo{width:100px; height: 20px; background: pink;}
+#header .hd_inner .logo h1{}
+#header .hd_inner .nav{}
+#header .hd_inner .nav > ul{
+    display: flex;
+}
+#header .hd_inner .nav ul li{
+    position: relative;
+    margin: 0 53px;
+}
+#header .hd_inner .nav ul li a{
+    color: #000;
+    font-size: 20px;
+}
+#header .hd_inner .nav ul li a.on{
+    border-bottom: 1px solid #000;
+}
+#header .hd_inner .nav ul li ul{
+    display:none;
+    position: absolute;
+}
+#header .hd_inner .nav ul li ul li{
+    margin: 8px 18px
+}
+#header .hd_inner .nav ul li ul li a{
+    font-size: 15px;
+    color: red
+}
+#header .hd_inner .nav ul li ul.list_set li a{
+    font-weight: 600;
+}
+#header .hd_inner .nav .shop .list_set{
+    left: 0;
+}
+#header .hd_inner .nav .shop .list_pdt{
+    left: 200px;
+}
+#header .hd_inner .nav .shop .list_line{
+    left: 400px;
+}
+#header .hd_inner .util_menu{}
+#header .hd_inner .util_menu ul{}
+#header .hd_inner .util_menu ul li{}
+#header .hd_inner .util_menu ul li a{}
+
+#header.active .hd_inner{
+    height: 309px;
+    transition: 0.5s;
+}
+#header.active .hd_inner .nav ul li ul{
+    display: block;
+}
+</style>
+<body>
+    <div id="header">
+        <div class="hd_inner">
+            <div class="logo">
+                <h1><img src="" alt=""></h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="shop"><a href="#">SHOP</a>
+                        <ul class="list_set">
+                            <li><a href="#">베스트셀러</a></li>
+                            <li><a href="#">길잡이 세트</a></li>
+                        </ul>
+                        <ul class="list_pdt">
+                            <li><a href="#">전제품</a></li>
+                            <li><a href="#">스킨케어</a></li>
+                            <li><a href="#">클렌징</a></li>
+                            <li><a href="#">팩/마스크</a></li>
+                            <li><a href="#">기능성 미스트</a></li>
+                            <li><a href="#">비누</a></li>
+                        </ul>
+                        <ul class="list_line">
+                            <li><a href="#">라인별</a></li>
+                            <li><a href="#">다이브인</a></li>
+                            <li><a href="#">셀메이징</a></li>
+                            <li><a href="#">반칙</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">EVENT</a></li>
+                    <li><a href="#">REVIEW</a></li>
+                    <li><a href="#">PRESS</a></li>
+                    <li><a href="#">BRAND</a></li>
+                    <li><a href="#">VOYAGE</a></li>
+                </ul>
+            </div>
+            <div class="util_menu">
+                <ul>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $('.nav ul li').on('click',function(){
+            $("#header").toggleClass('active');
+        })
+    </script>
+    <div class="visual">
+            <a class="visual_bg" href="#">
+                <div class="con_inner">
+                    <div class="text_wrap">
+                        <p>DIVE–IN SERUM</p>
+                        <strong>2019 화해 뷰티어워드 1위!</strong>
+                        <span>베스트 신제품 에센스/앰플/세럼부문</span>
+                    </div>
+            </div>
+            </a>
+    </div>
+    <div class="main_banner banner_01">
+        <div class="con_inner">
+            <div class="text_wrap">
+                <p>
+                    <strong>토리든의 피부 길잡이</strong>
+                    전문 컨설턴트가 제안하는 나의 피부 타입에 맞는 화장품 사용법을 제안합니다.
+                </p>
+                <a class="btn_more" href="#">더 알아보기</a>
+            </div>
+            
+        </div>
+    </div>
+   
+    <div class="main_slider">
+        <div class="con__inner">
+            <div class="main_slider_wrap">
+                <div class="slider">
+                    <div class="bg_img"></div>
+                    <div class="text_wrap">
+                        <p>
+                            <strong>겨울의 찬바람을 이겨낼 수 있는 토리든 필수템</strong>
+                        </p>
+                        <p>
+                            <strong>다이브인 피부장벽 강화 키트</strong>
+                            저분자 히알루론산의 강력한 속 보습케어 & 피부 진정
+                        </p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="main_banner banner_02">
+        <div class="con_inner">
+            <div class="text_wrap">
+                <p>
+                    <strong>뜻 깊은 연말 선물을 위한 기프트 키트</strong>
+                    균형잡힌 스킨케어 관리를 위해 피부에 생기와 집중적인 영양을 공급하는 맞춤관리를 선물하세요.
+                </p>
+                <a class="btn_more" href="#">더 알아보기↗</a>
+            </div>
+            <div class="img_wrap">
+                <img src="http://seri002.img9.kr/main_banner_03.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="main_banner banner_03">
+        <div class="con_inner">
+            <div class="text_wrap">
+                <p>
+                    <strong>중요한 날을 앞둔 소중한 사람들에게</strong>
+                    균형잡힌 스킨케어 관리를 위해 피부에 생기와 집중적인 영양을 공급하는 맞춤관리를 선물하세요.
+                </p>
+                <a class="btn_more" href="#">더 알아보기↗</a>
+            </div>
+            <div class="img_wrap">
+                <img src="http://seri002.img9.kr/main_banner_04.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="ft_inner">
+            <div class="ft_info">
+                <dl>
+                    <dt>고객센터</dt>
+                    <dd>1600-3584</dd>
+                    <dt>카카오톡</dt>
+                    <dd>1600-3584</dd>
+                    <dt>팩스번호</dt>
+                    <dd>070-7834-7700</dd>
+                    <dt>이메일</dt>
+                    <dd>torriden@naver.com</dd>
+                    <dt>문의시간</dt>
+                    <dd>월-금 09:30 ~ 17:30<br/>점심시간 12:00 ~ 13:30</dd>
+                </dl>
+                <dl>
+                    <dt>법인명</dt>
+                    <dd>(주)토리든</dd>
+                    <dt>대표자</dt>
+                    <dd>권인구</dd>
+                    <dt>사업자등록번호</dt>
+                    <dd>760-86-00222</dd>
+                    <dt>개인정보관리책임자</dt>
+                    <dd>권인구</dd>
+                    <dt>통신판매업 신고</dt>
+                    <dd>2016-대전서구-0144호</dd>
+                    <dt>사업장소재지</dt>
+                    <dd>대전광역시 서구 변동서로 28번길 78-29</dd>
+                </dl>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2019 (주)토리든. All rights reserved</p>
+                <h1 class="logo"><img src="" alt=""></h1>
+            </div>
+        </div>
+
+        
+    </footer>
+</body>
+</html>
