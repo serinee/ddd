@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{width: 500px; height: 500px; margin: 0 auto; }
+    div .icon_plus{
+        position: relative;
+        width: 58px;
+        margin-top: 100px;
+    }
+    div .icon_plus::before, div .icon_plus::after{
+        display: block;
+        position: absolute;
+        left: 0; 
+        top: 0;
+        content: '';
+        border-radius: 50%;
+        
+        
+    }
+    div .icon_plus::before{
+        z-index: -1;
+        
+        width: 116px;
+        height: 116px;
+        background: #000;
+        animation: drift 3000ms infinite linear;
+    }
+    div .icon_plus::after{
+        
+        z-index: -2;
+        width: 174px;
+        height: 174px;
+        background: #000;
+        animation: drift2 3000ms infinite linear;
+    }
+    div .icon_plus img{
+        width: 100%;
+    }
+    @keyframes drift{
+        from{ transform: translate(-25%, -25%)  scale(0,0); opacity: 1}
+        to{transform: translate(-25%, -25%) scale(1,1); opacity: 0;}
+    }
+
+    @keyframes drift2{
+        from{ transform: translate(-32.5%, -32.5%) scale(0,0); opacity: 1}
+        to{transform: translate(-32.5%, -32.5%) scale(1,1); opacity: 0;}
+    }
+</style>
+<body>
+    <div>
+        <div class="icon_plus">
+            <img src="./btns_motion.png" alt="">
+        </div>
+    </div>
+    <div style="width: 500px; height: 300px; border: 1px solid #000;">
+        <span>
+            <span>dasdf</span>
+        </span>
+    </div>
+</body>
+</html>

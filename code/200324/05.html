@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var Person = function(name){
+            this.name = name;
+            this.getName = function(){
+                console.log(this.name);
+                return this.name;
+            }
+        }
+        
+        var person1 = new Person('철수')
+        var person2 = new Person('맹구')
+        person1.getName();
+        person2.getName();
+
+
+        function Cook(ingredients){
+            this.ingredients = ingredients
+        }
+
+        Cook.prototype.dough = function(){
+            console.log(`${this.ingredients} 를 반죽합니다.`)
+            return this
+        }
+        
+        Cook.prototype.ferment = function(){
+            console.log(`${this.ingredients} 를 발표시킵니다.`)
+            return this
+        }
+
+        Cook.prototype.bake = function(){
+            console.log(`${this.ingredients} 를 굽습니다.`)
+            return this
+        }
+
+        Cook.prototype.finish = function(){
+            console.log(`${this.ingredients} 이 완성되었습니다.`)
+        }
+
+        // var baker = new Cook('밀가루')
+        // baker.dough()
+        // baker.ferment()
+        // baker.bake()
+        // baker.finish()
+        
+        //new Cook('밀가루').dough().ferment().bake().finish();
+
+        new Cook('밀가루')
+            .dough()
+            .ferment()
+            .bake()
+            .finish()
+    </script>
+</body>
+</html>

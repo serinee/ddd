@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .wrap{position: relative; width: 100%; height: 100%; }
+    .wrap div{width: 700px; height: 800px; margin: 50px auto;   color: #333; opacity: 0; transition: 0.3s;}
+    .wrap div.on{opacity: 1; }
+    .con1{background: rgb(177, 105, 12);}
+    .con2{background: rgb(31, 5, 124);}
+    .con3{background: rgb(105, 6, 6);}
+    .con4{background: rgb(102, 172, 70);}
+    .con5{background: rgb(36, 88, 231);}
+</style>
+<body>
+    <div class="wrap">
+        <div class="con1 con"></div>
+        <div class="con2 con"></div>
+        <div class="con3 con"></div>
+        <div class="con4 con"></div>
+        <div class="con5 con"></div>
+    </div>
+
+    <script src='../js/jquery-3.4.1.min.js'></script>
+    <script>
+        $(document).ready(function(){
+            
+            function scrollAnimation(){
+                
+                $(window).on('scroll',function(){
+                    $('.con').each(function(){
+                        var scTop = $(window).scrollTop();
+                        var newDivTop = $(this).offset().top;
+                        var newDivBottom = $(this).offset().top + $(this).height(); 
+                        console.log($(this).index() + ' '+ scTop);
+                        console.log(newDivTop);
+                        console.log(newDivBottom);
+                        
+                        if (scTop> newDivTop - 300){
+                            $(this).addClass('on')
+                        }else{
+                            $(this).removeClass('on')
+                        }
+                   });
+                   
+               });
+           }
+
+        scrollAnimation();
+               
+        })
+    </script>
+</body>
+</html>

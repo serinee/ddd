@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #parent {
+  background: yellow;
+  height: 200px;
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.wrap{
+    background: lightgray;
+    display: inline-block;
+    width:  70%;
+    vertical-align: middle;
+}
+.chil d {
+  vertical-align: middle;
+  display: inline-block;
+  background: skyblue;
+  margin: 0;
+  padding: 0;
+}
+</style>
+<body>
+    <div id="parent">
+        <div class="helper"></div>
+        <div class="wrap">
+            <div class="child">child1</div>
+            <div class="child">child2</div>
+            <div class="child">child3</div>
+        </div>
+        
+      </div>
+</body>
+</html>
