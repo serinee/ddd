@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>세린이 과제</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="top-banner" style="display: flex;">
+            <p>저작권 문제로 bgm은 자체 연주로 대체합니다.. Back door - 스트레이키즈</p>
+            <audio controls="controls" autoplay loop id="myAudio" style="opacity: 0; ">
+                    <source src="./images/backdoor.m4a">
+            </audio>
+        </div>
+        <div class="audio-conterol">
+            <span class="btn-play"></span>
+            <span class="btn-pause">
+                <span></span>
+                <span></span>
+            </span>
+        </div>
+        <div class="img-skz">
+            <img src="./images/skz.jpg" alt="">
+        </div>
+        <div class="shock">
+            <span>충격!<br>요정 진짜있음</span>
+        </div>
+        <div class="text-kingdom">
+            <div class="finally">마참내!</div>
+            <p>엠넷 6월 3일 저녁 7시 50분 킹덤 파이널 경연 <span class="font-noto-serif">많.관.부</span></p>
+            <p class="kingdom">킹덤 파이널 경연까지 <span class="dday"></span> 남았습니다. <em>꺄악</em></p>
+            <P>당신에겐 하찮은 100원 ,, 누군가에겐 인생입니다 ,, <em>(문자투표 100원 .. )</em></P>
+        </div>
+        <div id="clock" class="clock"></div>
+        <div class="gif1">
+            <img src="./images/sir.gif" alt="">
+            <span><strong>경</strong>방찬, 필릭스 호주인이라 군대 면제 <strong>축</strong></span>
+        </div>
+        <span class="text text1 text-not-straight">스트레이트 키즈 아님</span>
+        <div class="img-fairy">
+            <img src="./images/fairy.png" alt="">
+        </div>
+        <div class="img-president">
+            <img src="./images/pre.png" alt="">
+        </div>
+        <div class="cospre-wrap">
+            <img src="./images/cospre2.png" alt="">
+        </div>
+        <div class="mooyaho-wrap">
+            <div class="text-wrap">
+                <p>왜요? 제가 타임지 선정 2020년 최고의 노래 8위에 오른 스트레이키즈의 팬처럼 생겼나요? 왜요? 제가 4세대 아이돌 최초로 1억뷰 뮤비 4관왕을 달성한 스트레이키즈의 팬 같은가요?</p>
+            </div>
+            <div class="img-mooyaho">
+                <img src="./images/mooyaho.png" alt="">
+            </div>
+            <span class="text-mooyaho">무야~호</span>
+            <div class="img-sunglasses">
+                <img src="./images/sunglasses.png" alt="">
+            </div>
+        </div>
+        <div class="video-wrap">
+            <p class="font-noto-serif">스트레이키즈의 무대 한번만,,, 잡솨봐,,</p>
+            <div class="video">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/cDTG6o1vC2I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+    <script>
+        let date = new Date();
+        setInterval(getClock, 1000);
+        setInterval(randomTarget,2200);
+        setInterval(randomColor,2000);
+        setInterval(randomColor2,200);
+
+        //시계, dday 
+        function getClock(){
+            let nowdate = new Date();
+            let date = new Date();
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+            const clock = document.getElementById('clock');
+
+            //dday값 설정
+            let dday = new Date("2021-06-03T19:50:00+0900");
+            const distance = dday.getTime() - nowdate.getTime(); 
+            const distanceDay = Math.floor(distance/(1000*60*60*24));
+            const dHours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+            const dMin = Math.floor((distance % (1000*60*60))/(1000*60));
+            const dSec = Math.floor((distance % (1000*60))/1000);
+            const ddayText = document.querySelector(".dday");
+
+            if( hour > 12){
+                hour = (hour - 12);
+            }
+            console.log("clock",hour,min,sec);
+            clock.innerHTML = `${hour < 10 ? `0${hour}` : hour}:${min < 10 ? `0${min}` : min}:${sec < 10 ? `0${sec}` : sec}`;
+
+            ddayText.innerText = 
+                `${distanceDay}일 ${dHours < 10 ? `0${dHours}` : dHours}시간 ${dMin < 10 ? `0${dMin}` : dMin}분 ${dSec < 10 ? `0${dSec}` : dSec}초` ;
+        }
+
+        //말풍선 랜덤 좌표
+        function randomTarget(){
+            let ranTxt = document.querySelector('.text-not-straight');
+            let maxwidth = document.body.clientWidth;
+            let maxheight = document.body.clientHeight;
+            let ranX = Math.floor((Math.random()*(maxwidth-1+1))+1);
+            let ranY = Math.floor((Math.random()*(maxheight-1+1))+1);
+            let randomNum =  Math.random() *( 2 - 0.5 ) + 0.5 ;
+
+            ranTxt.style.position = 'fixed';
+            ranTxt.style.top = ranY + 'px';
+            ranTxt.style.left = ranX + 'px';
+            ranTxt.style.transform = "scale("+randomNum+")";
+            console.log("3"+ranX,ranY,maxwidth,maxheight)
+        }
+        
+        //마우스 딱지
+        document.addEventListener("mousemove", function(e){
+            const img_fairy = document.querySelector(".img-fairy");
+            img_fairy.style.left = e.clientX + 50 + "px";
+            img_fairy.style.top = e.clientY + 50 + "px";
+        });
+
+        //시계 컬러값
+        function randomColor(){
+            let ranColor1 = Math.floor(Math.random() * (360 - 0 + 1));
+            document.querySelector(".clock").style.color = "hsla("+ranColor1+"deg,100%,91%,1)";
+           console.log("color")
+        }
+
+        //말풍선 컬러값
+        function randomColor2(){
+            let ranColor2 = Math.floor(Math.random() * (360 - 0 + 1));
+            document.querySelector(".finally").style.background = "hsla("+ranColor2+"deg,100%,50%,1)";
+        }
+
+        //오디오 제어
+        let bgm = document.getElementById("myAudio");
+        function pauseAudio() {
+            bgm.pause();
+        }
+        document.querySelector(".btn-pause").addEventListener('click',pauseAudio);
+       
+        function playAudio(){
+            bgm.play();
+        }
+        document.querySelector(".btn-play").addEventListener('click',playAudio);
+    </script>
+
+</body>
+</html>
